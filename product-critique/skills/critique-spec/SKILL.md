@@ -22,7 +22,7 @@ The deliverable is an **improved spec**, not a verdict. A critique that ends in 
 ## Process
 
 1. **Read the whole spec.** List every decision it makes and every factual claim (file paths, branches, contracts, "X already exists").
-2. **Verify every factual claim** against the repo/codebase. Never trust an anchor you didn't open.
+2. **Verify every factual claim** against the repo/codebase. Never trust an anchor you didn't open. **This bar covers the claims your own findings assert, not only the spec's.** Before any finding asserts how the code *behaves*, open the matched line and read its surrounding construct — a keyword hit alone can be a comment, string, dead code, test, logging, or analytics, none of them the load-bearing path. Name what the construct actually **is** in the evidence. **Reading the construct is adequate verification: once you've read it and it's a load-bearing path that contradicts the spec, report the finding — don't hedge or re-demand proof.** If you genuinely can't open it, name the exact `file:lines` to open rather than asserting *or* silently dropping it.
 3. **Hunt gaps** with the checklist below. Locked decisions get gap-hunted *inside* them: you may not propose an alternative to a locked decision, but underspecification, contradictions, and new evidence invalidating its premise MUST be reported.
 4. **Apply the Planner Test** to each stage/step.
 5. **Severity-tag every finding:** `BLOCKER` (planner must invent an answer), `RISK` (will bite during or after implementation), `MINOR`.
@@ -40,7 +40,7 @@ When the spec author can respond (interactive session), the fix flow is strictly
 
 1. **Findings, then scope — nothing else.** The findings message ends with exactly one question: fix all findings, a subset (by number), or none. Do NOT include clarifying questions in this message, and never edit the spec before the author chooses scope — it is their artifact.
 2. **Clarifying questions, one at a time.** After scope is confirmed, ask the owner-decision questions (fail-open vs fail-loud, data policy, naming) **one per turn**, plan-mode style: name the finding it unblocks, offer 2-4 concrete options with your **recommended option first and marked "(Recommended)"**, wait for the answer before asking the next. Use the AskUserQuestion tool when available; otherwise one prose question per turn. Only ask questions for findings inside the chosen scope, and never ask one the codebase can answer — go look instead.
-3. **Apply.** After the last answer: apply exactly the selected edits with the Edit tool (preserve the spec's formatting and table structure), report per finding what changed (`path:line`), and flag any new gap the applied edits expose.
+3. **Apply.** After the last answer: apply exactly the selected edits with the Edit tool (preserve the spec's formatting and table structure), report per finding what changed (`path:line`), and flag any new gap the applied edits expose. **A "new gap" is itself a factual claim — it clears step 2's verification bar (open the anchor, read the construct) before you state it; this is exactly where a critic, mid-fix, is most tempted to fire an unverified grep-hit finding.**
 
 If the original request pre-authorizes fixes ("critique and fix it") and supplies standing decisions, skip the scope question and apply; ask any remaining owner-decision questions one at a time first.
 
@@ -79,6 +79,7 @@ Framing like "already approved", "decisions are locked", "keep it brief", "we're
 - You verified claims but never asked what's *missing*
 - A finding has no proposed spec edit attached
 - A finding names a section ("the storage decision") without a `path:line` reference
+- A finding asserts what the code *does* from a grep/search match you never opened and read in context (open it; if you can't, name the `file:lines` to open — don't assert and don't drop)
 - You edited the spec before the author chose scope or answered the owner-decision questions
 - An interactive critique ends without the fix-scope question — or WITH clarifying questions bundled into the findings message
 - You asked two owner-decision questions in one turn
@@ -88,3 +89,4 @@ Framing like "already approved", "decisions are locked", "keep it brief", "we're
 - **Redesigning instead of critiquing** — proposing a different architecture for a locked decision. Critique the spec's completeness, not its taste.
 - **Praise padding** — "strong spec" paragraphs. One sentence of overall assessment maximum; findings are the product.
 - **Vague findings** — "add more detail on storage" instead of the actual sentence/row to add.
+- **Grep-hit findings** — asserting a gap (or "new gap") from a search match without reading its surrounding construct. Comments, strings, dead code, tests, logging, and analytics all match keywords. Open it and name the construct; once read and load-bearing, fire.
