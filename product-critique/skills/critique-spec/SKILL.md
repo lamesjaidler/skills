@@ -59,6 +59,7 @@ When no author is reachable (you are a subagent returning a report), return find
 | Naming | Collisions with existing concepts in the codebase |
 | Verification | Is each claim of behavior actually checkable? Are deterministic parts unit-testable? Does "manual review" hide an absent test strategy? |
 | Adjacent paths | Sibling code paths the spec touches but doesn't mention (refinement flows, alternate branches) |
+| Internal references | Does every pointer resolve? Every "see Appendix X", "§Y", "Decision #N", "Stage Z" must name a section that exists in this spec; a dangling pointer (e.g. "recorded in Appendix C" when there is no Appendix C) is a gap — BLOCKER if the missing target is load-bearing (rehearsed commands, a data contract), MINOR if cosmetic. |
 
 ## Pressure Resistance
 
