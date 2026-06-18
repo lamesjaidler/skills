@@ -1,0 +1,21 @@
+{
+  "name": "qualitative-product-research",
+  "displayName": "Qualitative Product Research",
+  "version": "0.1.0",
+  "description": "Skills for qualitative product and user research: rehearsing user interviews with a coached roleplay, and a live copilot that suggests your next question during a real interview.",
+  "author": {
+    "name": "James Laidler",
+    "email": "james@electrify.video"
+  },
+  "homepage": "https://github.com/lamesjaidler/skills",
+  "repository": "https://github.com/lamesjaidler/skills",
+  "license": "MIT",
+  "keywords": [
+    "user-research",
+    "customer-discovery",
+    "user-interviews",
+    "product-research",
+    "qualitative",
+    "the-mom-test"
+  ]
+}

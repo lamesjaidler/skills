@@ -1,0 +1,20 @@
+{
+  "name": "skills",
+  "description": "Agent skills for product work: critiquing specs and implementation plans before execution, and running qualitative user-research interviews.",
+  "owner": {
+    "name": "lamesjaidler",
+    "email": "james@electrify.video"
+  },
+  "plugins": [
+    {
+      "name": "product-critique",
+      "source": "./product-critique",
+      "description": "Critique product planning artifacts before execution: a spec/design-doc/PRD reviewer and an implementation-plan reviewer. Findings come back as concrete proposed edits."
+    },
+    {
+      "name": "qualitative-product-research",
+      "source": "./qualitative-product-research",
+      "description": "Qualitative user-research skills: rehearse interviews with a coached roleplay, and get live next-question suggestions during a real interview."
+    }
+  ]
+}
