@@ -54,11 +54,12 @@ When no author is reachable (you are a subagent returning a report), return find
 | Identifiers | Every ID referenced: which ID exactly? (doc ID vs inner field — classic bug seed) |
 | Failure semantics | Missing data, malformed input, fetch failure, empty result: fail open or loud? |
 | Contradictions | Do any two statements in the spec (or spec vs data contract) conflict? |
-| Lifecycle | Concurrency, retries, ordering, staleness — decided or accidental? |
+| Lifecycle & concurrency | Concurrency, retries, ordering, staleness — decided or accidental? **Cross-check against the deploy topology: if the design assumes a single writer / ordered / once-only run or consumer, does the runtime actually guarantee it — or does an autoscaling / multi-instance / multi-replica / cron-on-HTTP / at-least-once-trigger setting silently break it? A scaling or instance-count setting that contradicts a single-run assumption is a gap.** |
 | Security & data | Secrets, PII, real data in fixtures/version control, unauthenticated cost-bearing endpoints |
 | Naming | Collisions with existing concepts in the codebase |
 | Verification | Is each claim of behavior actually checkable? Are deterministic parts unit-testable? Does "manual review" hide an absent test strategy? |
 | Adjacent paths | Sibling code paths the spec touches but doesn't mention (refinement flows, alternate branches) |
+| Internal references | Does every pointer resolve? Every "see Appendix X", "§Y", "Decision #N", "Stage Z" must name a section that exists in this spec; a dangling pointer (e.g. "recorded in Appendix C" when there is no Appendix C) is a gap — BLOCKER if the missing target is load-bearing (rehearsed commands, a data contract), MINOR if cosmetic. |
 
 ## Pressure Resistance
 
