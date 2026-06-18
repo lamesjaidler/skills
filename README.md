@@ -2,12 +2,12 @@
 
 A [Claude Code](https://code.claude.com) plugin marketplace of small agent skills for product work — reviewing planning artifacts before they reach execution, and running better qualitative user research.
 
-| Plugin | Skill | What it does |
-|---|---|---|
-| `product-critique` | `critique-spec` | Critiques a spec / design doc / PRD before implementation planning. Hunts gaps, verifies every factual claim against the codebase, returns findings as concrete proposed spec edits. |
-| `product-critique` | `critique-implementation-plan` | Critiques an implementation plan before execution. Applies the "Executor Test" to every step, verifies anchors, returns findings as concrete proposed plan edits. |
-| `qualitative-product-research` | `practicing-user-interviews` | Roleplays a realistic potential user of *your* app and coaches your interview questions toward specific past behaviour, in real time. |
-| `qualitative-product-research` | `live-interview-copilot` | During a real interview, you paste each reply and it returns the single best next question — short and speakable out loud. |
+| Plugin | Skill | Problem it solves | How to use |
+|---|---|---|---|
+| `product-critique` | `critique-spec` | Specs reach implementation planning with gaps the author can't see — anything a planner would otherwise have to invent — and they resurface as bugs downstream. | Draft a spec / design doc / PRD, then ask for a review (or invoke `critique-spec`). You get numbered, severity-tagged findings as concrete proposed spec edits; you choose which to apply. |
+| `product-critique` | `critique-implementation-plan` | Plans look ready to execute but hide steps that force whoever runs them to guess — wrong file, missing test, stale anchor. | After a plan is drafted, ask for a review (or invoke `critique-implementation-plan`). Same format: numbered findings as proposed plan edits, scoped with you before anything is applied. |
+| `qualitative-product-research` | `practicing-user-interviews` | You're about to interview real users, but untrained questions lean on opinions and hypotheticals that produce flattering, useless answers — and there's nowhere safe to practice. | Run it in your app's repo and say "be a user I can interview". It plays a persona grounded in the repo and coaches each question toward specific past behaviour, live. |
+| `qualitative-product-research` | `live-interview-copilot` | Mid-interview, under time pressure, it's hard to pick the best next question — easy to ask double-barrelled or leading ones and waste the session. | Start it before a live call, give it the research goal, then paste each reply. You get one short, speakable next question back per turn. |
 
 Each plugin bundles the skills for one phase of product work: `product-critique` reviews the artifacts (critique the *what*, then the *how*); `qualitative-product-research` runs the discovery interviews.
 
