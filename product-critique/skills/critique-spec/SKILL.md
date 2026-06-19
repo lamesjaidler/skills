@@ -19,6 +19,18 @@ The deliverable is an **improved spec**, not a verdict. A critique that ends in 
 
 **Not for:** reviewing code diffs (use code review), generating the design itself (use brainstorming), re-deciding settled trade-offs.
 
+## Pass mode — single vs fan-out (choose first)
+
+Before step 1, scan the spec, **recommend** a mode, and ask the user (one upfront question — separate from the fix-flow's question rules):
+
+- **Fan-out** when the spec is **large** (many stages/sections/appendices), **high-stakes** (irreversible steps — history rewrite, prod cutover, data migration/deletes — or a security/PII/money surface), or **multi-domain** (data + deploy + ops). Single-pass reliably under-weights a dimension here.
+- **Single-pass** when **short + low-stakes + single-domain** — one thorough pass covers it; fan-out isn't worth ~3× cost.
+
+Give the recommendation in one line with the reason (e.g. *"~12 stages, prod cutover + irreversible history rewrite → fan-out"*), then ask **single or fan-out?** Proceed on your recommendation if the user has no preference.
+
+- **Single:** run steps 1–7 below.
+- **Fan-out:** run steps 1–4 as **3 independent subagents**, each doing the full critique on the whole spec with a **distinct emphasis** (contract/data, consistency, operational) — full coverage each, **not** exclusive lanes, **not** identical prompts. Then **consolidate** (main thread): merge duplicates (≥2 passes agreeing = higher confidence), **re-verify each surviving BLOCKER/RISK against the code** (step 2's bar), **drop conflicts/false positives**, reconcile severity. Run steps 5–7 on the consolidated list. *Diversity, not count, is the lever — identical passes share blind spots; the gain is covering under-weighted dimensions + redundancy, not catching cross-cutting bugs.*
+
 ## Process
 
 1. **Read the whole spec.** List every decision it makes and every factual claim (file paths, branches, contracts, "X already exists").
