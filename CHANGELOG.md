@@ -8,6 +8,16 @@ The format loosely follows [Keep a Changelog](https://keepachangelog.com/).
 
 ## product-critique
 
+### [0.1.0] — 2026-06-19
+
+`critique-spec` refinements (still **experimental**):
+
+- Added pass-mode guidance — when to run a single critique vs. fan out across
+  diverse perspectives, with criteria for each.
+- Expanded lifecycle checks: concurrency implications and a cross-check against
+  deploy topology for gaps.
+- Added internal-reference checks to the critique guidelines.
+
 ### [0.0.0] — 2026-06-18
 
 Initial release. **Experimental** — both skills only lightly tested; expect

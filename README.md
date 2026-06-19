@@ -12,7 +12,7 @@ A [Claude Code](https://code.claude.com) plugin marketplace of small agent skill
 Each plugin bundles the skills for one phase of product work: `product-critique` reviews the artifacts (critique the *what*, then the *how*); `qualitative-product-research` runs the discovery interviews.
 
 > [!WARNING]
-> **Experimental.** `product-critique` is `v0.0.0` and only lightly tested; `qualitative-product-research` is `v0.1.0`. Expect rough edges and breaking changes. Feedback and issues welcome.
+> **Experimental.** `product-critique` is `v0.1.0` and only lightly tested; `qualitative-product-research` is `v0.1.0`. Expect rough edges and breaking changes. Feedback and issues welcome.
 
 ## Install
 
@@ -66,9 +66,18 @@ skills/                                  # repo root = the marketplace
 │   └── skills/
 │       ├── practicing-user-interviews/SKILL.md
 │       └── live-interview-copilot/SKILL.md
-├── scripts/validate-marketplace.sh      # manifest validator (run in CI)
-└── .github/workflows/validate.yml
+├── scripts/
+│   ├── validate-marketplace.sh          # manifest validator (run in CI)
+│   ├── dev.sh                           # load a plugin live into a throwaway session
+│   └── release.sh                       # validate, bump version, refresh the install
+├── .github/workflows/validate.yml
+├── CHANGELOG.md                         # per-plugin version history
+└── CONTRIBUTING.md                      # repo layout + validator invariants
 ```
+
+## Contributing
+
+Contributions welcome — see [CONTRIBUTING.md](./CONTRIBUTING.md) for the repository layout and the two invariants the validator enforces.
 
 ## License
 

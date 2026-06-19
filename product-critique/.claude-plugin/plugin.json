@@ -1,7 +1,7 @@
 {
   "name": "product-critique",
   "displayName": "Product Critique",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Critique product planning artifacts before execution: review a spec/design-doc/PRD, then the implementation plan. Findings arrive as concrete proposed edits, not a verdict.",
   "author": {
     "name": "James Laidler",
