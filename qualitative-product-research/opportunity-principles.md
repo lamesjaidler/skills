@@ -87,7 +87,9 @@ P7 — Dan, Leeds, part-time producer (house), releases roughly quarterly
       evidence: ⚠ ASSUMPTION — untested
       falsifier: "Walk me through how you found your last 100 listeners."
   - "I burned an evening and I think it got me six plays"
-      evidence: ✓ P3, P7 (2 interviews)
+      evidence: ✓ P3 (1 interview)
+  - "If I spend four of them messaging DJs that's four hours I didn't spend producing"
+      evidence: ✓ P7 (1 interview)
 
 # Parked solutions
 - Scheduling tool (pitched 2026-08-07) — not an opportunity; revisit after validation
