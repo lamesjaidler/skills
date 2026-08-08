@@ -1,8 +1,8 @@
 {
   "name": "qualitative-product-research",
   "displayName": "Qualitative Product Research",
-  "version": "0.1.0",
-  "description": "Skills for qualitative product and user research: rehearsing user interviews with a coached roleplay, and a live copilot that suggests your next question during a real interview.",
+  "version": "0.2.0",
+  "description": "Skills for qualitative product and user research: rehearsing user interviews with a coached roleplay, a live copilot that suggests your next question during a real interview, and mapping an outcome into an evidence-tagged opportunity space.",
   "author": {
     "name": "James Laidler",
     "email": "james@electrify.video"
@@ -16,6 +16,9 @@
     "user-interviews",
     "product-research",
     "qualitative",
-    "the-mom-test"
+    "the-mom-test",
+    "opportunity-solution-tree",
+    "opportunity-mapping",
+    "continuous-discovery"
   ]
 }
