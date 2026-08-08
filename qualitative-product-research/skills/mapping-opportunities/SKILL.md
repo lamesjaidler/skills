@@ -49,7 +49,7 @@ Run every node through the seven framing rules and rewrite the violations. Cap a
 
 ### 5. Write the map
 
-Write `docs/discovery/<outcome-slug>-opportunity-map.md`, relative to the root of the project you are working in — not the plugin's repo. Sections in order: outcome (noting its triage type and any reframe), experience map, interviews (one snapshot per interview, per step 3), opportunity space with a per-node evidence tag, parked solutions, open questions → an interview plan targeting the weakest-evidence nodes. Full format, the seven framing rules, and evidence-tag definitions all live in `opportunity-principles.md` — this workflow applies them, it does not restate them.
+Write `docs/discovery/<outcome-slug>-opportunity-map.md`, relative to the root of the project you are working in — not the plugin's repo. If no consuming project root is evident, say so, show the map inline instead, and ask where the file should go. Sections in order: outcome (noting its triage type and any reframe), experience map, interviews (one snapshot per interview, per step 3), opportunity space with a per-node evidence tag, parked solutions, open questions → an interview plan targeting the weakest-evidence nodes. Full format, the seven framing rules, and evidence-tag definitions all live in `opportunity-principles.md` — this workflow applies them, it does not restate them.
 
 ## Common mistakes
 
@@ -59,9 +59,25 @@ Write `docs/discovery/<outcome-slug>-opportunity-map.md`, relative to the root o
 - Letting a feature pitched mid-session into the opportunity space — it goes to parked solutions.
 - Untagged nodes, or an assumption node with no falsifier.
 
+## Rationalisations — and why they fail
+
+**Violating the letter of these rules is violating the spirit of them.**
+
+| Excuse | Reality |
+|---|---|
+| "not as pushback, just so you're not surprised in the room" / "it can happen the same week without touching the roadmap timeline" | Both land after the ranking is already on the slide — an aside and a bolt-on extra, not a replacement. The cheap validation has to replace the ranking, not footnote it. |
+| "make sure the slide's language says 'top 3 hypotheses' rather than 'validated priorities'" | A room acts on the order, not the header above it. Renaming an ordinal list "hypotheses" doesn't remove the ordering — it just makes the ranking harder to challenge. |
+| "a reasonable way to produce a roadmap slide under a hard deadline with zero budget" / "product judgment applied to stated pain and proximity to the metric, not evidence" / "one coherent bet if the VP asks 'why these three together'" | A deadline, the word "judgment," and a story that lands well with the VP are all reasons a ranking is convenient — none of them are evidence #1 beats #2. Under real time pressure the honest deliverable is still the cheapest-test-first sequence; it fits on the same slide. |
+| "treat it as a strong starting draft to pressure-test against 8-10 real conversations … not a substitute for them" / "a hypothesis map, not validated research" | The disclaimer sits in the prose at the top and bottom; nothing in the body of the tree tells a guess from a finding. Tag every node `⚠ ASSUMPTION` with a falsifier instead of hedging around the outside of it. |
+| "with a sample of two, that overlap is the closest thing to a confidence signal available" / "enough to draft a strong first-cut opportunity space … not enough to size or rank it with confidence" / "Cluster 3 is directional, not confirmed" | n=2 is n=2. Write the tag — `✓ P3, P7 (2 interviews)` — and let the reader see exactly who said it, instead of a mood word like "confidence signal" or "directional" standing in for the count. |
+| "Keep all six in the map; weight prioritization toward the first three." | "Weight toward" orders the six exactly as a ranked list would. Three areas were favoured over the other three on no more evidence than the ranking this skill forbids elsewhere. |
+
 ## Red flags — stop
 
 - You are about to rank, score, or roadmap `⚠ ASSUMPTION` nodes — by any method, numeric or ordinal, ranked or an unranked "top 3 for the slide." Every notation borrows confidence the guesses don't have; a caveat sitting beside a delivered ranking doesn't fix it, and neither does relabelling the list "hypotheses" instead of "priorities." Give the interview plan or a cheapest-test-first sequence instead.
 - You are about to name an opportunity no customer said.
 - A node reads "increase X" — that is an outcome, not an opportunity.
 - Any node in the tree carries no evidence tag.
+- You are about to justify a ranking by the deadline, the missing budget, or how it will land with a stakeholder — pressure is not evidence, however reasonable it sounds.
+- You are about to write a hedge — "not validated research," "a strong first-cut," "directional, not confirmed," "a confidence signal" — into a sentence instead of onto a node's evidence tag.
+- You are about to tell someone to "weight" or "lean toward" some opportunities over others without a ranked list — that is a ranking in different words.
