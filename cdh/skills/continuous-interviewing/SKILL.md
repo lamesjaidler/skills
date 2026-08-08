@@ -19,7 +19,7 @@ Anti-patterns cited below live in `${CLAUDE_PLUGIN_ROOT}/anti-patterns.md`.
 
 Questions collect specific past stories, because asking customers what they want collects unreliable predictions (AP1). A usable question names one concrete past instance: "Tell me about the last time you…"
 
-1. Read `discovery/<outcome-slug>/experience-map.md` (path rules: `${CLAUDE_PLUGIN_ROOT}/discovery-layout.md`). If it does not exist, draft one with the user first — sketch the steps of the current customer experience as they understand it, save it, then continue.
+1. Read `discovery/<outcome-slug>/experience-map.md` (path rules: `${CLAUDE_PLUGIN_ROOT}/discovery-layout.md`). If no `discovery/<outcome-slug>/` dir exists at all, the outcome comes first: point the user to the `defining-outcomes` skill (it creates the dir), and until it has run, deliver any draft map and guide in your reply only — `discovery/` stays untouched, no invented slug. If the dir exists but the map does not, draft one with the user — sketch the steps of the current customer experience as they understand it, save it, then continue.
 2. Pick the slice of the map the trio most needs to learn about; state which slice and why.
 3. Write story-elicitation questions, each anchored to a named slice: "Tell me about the last/most recent time you <did that slice's activity>."
 4. Under each question, add follow-up scaffolds that walk the story's timeline: "Take me back to the start." "What happened next?" "What did you do then?"
