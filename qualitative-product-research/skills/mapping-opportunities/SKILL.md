@@ -49,9 +49,7 @@ Run every node through the seven framing rules and rewrite the violations. Cap a
 
 ### 5. Write the map
 
-Write `docs/discovery/<outcome-slug>-opportunity-map.md`, relative to the root of the project you are working in — not the plugin's repo. Sections in order: outcome (noting any reframe), experience map, interviews (one snapshot per interview, per step 3), opportunity space with a per-node evidence tag, parked solutions, open questions → an interview plan targeting the weakest-evidence nodes. Format in `opportunity-principles.md`.
-
-The full seven framing rules and evidence-tag definitions live in `opportunity-principles.md` — this workflow applies them, it does not restate them.
+Write `docs/discovery/<outcome-slug>-opportunity-map.md`, relative to the root of the project you are working in — not the plugin's repo. Sections in order: outcome (noting its triage type and any reframe), experience map, interviews (one snapshot per interview, per step 3), opportunity space with a per-node evidence tag, parked solutions, open questions → an interview plan targeting the weakest-evidence nodes. Full format, the seven framing rules, and evidence-tag definitions all live in `opportunity-principles.md` — this workflow applies them, it does not restate them.
 
 ## Common mistakes
 
@@ -63,7 +61,7 @@ The full seven framing rules and evidence-tag definitions live in `opportunity-p
 
 ## Red flags — stop
 
-- You are about to rank, score, or roadmap `⚠ ASSUMPTION` nodes. Ranking guesses by impact × reach is fake precision — the output looks like a plan and carries none of the confidence the numbers imply. Give the interview plan instead.
+- You are about to rank, score, or roadmap `⚠ ASSUMPTION` nodes — by any method, numeric or ordinal, ranked or an unranked "top 3 for the slide." Every notation borrows confidence the guesses don't have; a caveat sitting beside a delivered ranking doesn't fix it, and neither does relabelling the list "hypotheses" instead of "priorities." Give the interview plan or a cheapest-test-first sequence instead.
 - You are about to name an opportunity no customer said.
 - A node reads "increase X" — that is an outcome, not an opportunity.
 - Any node in the tree carries no evidence tag.
