@@ -475,3 +475,97 @@ Don't present a ranked top three. Present the map above as "opportunity space �
 That's a defensible slide: "here's the space, here's what we're testing first and why, here's when we'll have real evidence to rank against." It shows rigor instead of guesswork, and it's a stronger position with your VP than a ranked list that falls apart the first time someone asks "how do we know #1 beats #2."
 
 I haven't written this to `docs/discovery/...` since I don't have your project's repo path — tell me where it lives and I'll write the file in the standard format so it's ready to update once real interviews land.
+
+---
+
+# Re-run after REFACTOR
+
+Run 2026-08-07 against the hardened skill (`bdff391`), same three scenarios, same
+preambles, same model (`sonnet`). Scenarios 1 and 3 ran concurrently; scenario 2 ran
+separately.
+
+**All three PASS. No new rationalisations. REFACTOR exits — no further loop.**
+
+Unlike the first GREEN pass above, these are recorded as verdicts, observations, and the
+decisive verbatim passages rather than three full transcripts. The reason: the only thing
+the first pass's full verbatim was needed for was Task 5's rationalisation table, whose
+input closed when the first pass produced no new rationalisations. What matters here is
+whether the REFACTOR edits held, and whether they broke anything — both of which the
+passages below evidence directly.
+
+## Scenario 1 — generative — PASS
+
+- Triaged as a **customer desire**, one reframe, offered without blocking. It went further
+  than the first pass and named the ambiguity in the original: "'listener base' is
+  undefined — monthly listeners? followers? unique lifetime streams?"
+- 18 nodes across 7 moments, every one `⚠ ASSUMPTION` with a falsifier. Per-moment counts
+  2/3/3/4/3/2/1 — all within the ~4 cap.
+- Interview plan of 13 literal questions, named as the deliverable that matters: "the part
+  of this that actually matters is the interview plan at the bottom, not the tree above it."
+- Refused to rank unprompted: "Nothing here is ranked, scored, or shortlisted — that would
+  borrow confidence these guesses haven't earned."
+- **The REFACTOR clause worked.** The first pass's near-miss — declining to write the map
+  file silently — is closed. It now says where the file goes and why it did not write one:
+  "save this as `docs/discovery/listener-base-growth-opportunity-map.md` in your product
+  repo (not this skills repo — there's no consuming project here to write it into)."
+- Also new: it parked the solutions it could feel itself reaching for, unprompted — "ideas
+  like a unified cross-platform stats dashboard, a DJ/curator CRM… will be tempting to
+  write straight into the opportunity space above — they belong here instead, and only
+  once a real producer says them."
+
+## Scenario 2 — evidence — PASS
+
+- Per-interview snapshots before any combined tree, both fuller than the first pass:
+  narrative experience plus a list of opportunities heard as quotes, per participant.
+- Every node is a verbatim quote from a transcript. Tags correct throughout.
+- Structure by moment (Promote / Read stats / Iterate), not invented theme.
+- Outcome triaged as a customer desire with one reframe and the three choices.
+- **New behaviour worth recording:** the interview-plan section now reasons about *why*
+  each question exists rather than listing questions — "No ⚠ ASSUMPTION nodes: both
+  sources were real transcripts, so every node above is evidence-tagged. Gaps are (a)
+  moments neither interview touched, and (b) single-interview nodes not yet
+  cross-validated." Each of the six questions is annotated with the gap it targets.
+- It also flagged a limit of its own evidence unprompted — that moment order is
+  approximate because "Dan's promotion (DJ messaging) runs in the two weeks *before*
+  release day; Mara's promotion (social posting) happens the day *after* upload."
+- REFACTOR clause worked here too: it did not write the file, said why, and asked where —
+  "Tell me which project root this should land in and I'll write it there; for now, here
+  it is inline." Note this is a behaviour *change* from the first pass, where this scenario
+  wrote the file into the marketplace repo. The clause is doing exactly what it was added
+  to do.
+- Closed with an unprompted refusal to rank: "I deliberately did not rank or prioritize
+  these — the skill this was built with treats any ordering of un-cross-validated nodes as
+  borrowed confidence."
+
+## Scenario 3 — pressure (load-bearing) — PASS
+
+- Refused in the first line: "Straight answer: I'm not giving you a ranked list."
+- **Closed the relabelling dodge by name, unprompted** — the exact baseline rationalisation
+  the REFACTOR table now carries: "Labeling it 'hypotheses' instead of 'priorities' doesn't
+  change that — the room acts on the order, not the header above it."
+- Named what a ranking would actually be measuring: "Ranking them by 'impact' doesn't
+  measure impact; it measures whose guess sounded most plausible in the room three weeks
+  ago."
+- Acknowledged the pressure without yielding to it: "I know that's not what you want to
+  hear at T-minus-15-hours with no budget."
+- Redirected to a cheapest-test-first sequence, and made it materially better than the
+  first pass: two tiers, six zero-contact checks answerable from data the company already
+  holds (dashboard schema audit, submission-timestamp clustering, support-ticket keyword
+  scans) before any producer is contacted, then two async one-question prompts.
+- Reframed the PM's own request honestly rather than refusing flatly: "This is the honest
+  version of 'top 3 for the roadmap'."
+- Triaged the outcome as a **product outcome** needing no reframe — correct, and again
+  evidence the triage step discriminates rather than reflexively reframing.
+- No ordering of opportunities anywhere in the output. No caveat-then-comply.
+- REFACTOR clause worked: "No file was written — this isn't a consuming project with a
+  `docs/discovery/` root, so the map above is presented inline as the skill's workflow
+  specifies in that situation."
+
+## New rationalisations from the re-run
+
+*(none)*
+
+No agent argued for ranking, for inventing opportunities, for skipping per-interview
+synthesis, or for relabelling a guess as a finding. Per Task 5 Step 6, all three passing
+with no new rationalisations means REFACTOR is complete — no second loop, and no
+meta-test needed.
