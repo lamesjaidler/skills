@@ -30,4 +30,6 @@ discovery/
       - Assumption tests: see assumptions/<solution-slug>.md
 ```
 
+**Target marker:** once the trio confirms a target, `prioritizing-opportunities` appends ` <- TARGET` to that node's line and logs a dated entry under a `## Target history` section at the end of the file (appended if absent). Both persist across restructures — moving, merging, splitting, or renumbering nodes must carry the marker and every history entry forward, never drop them silently.
+
 Node rules: every node has exactly one parent; opportunities are needs/pain-points/desires in the customer's frame; solutions attach only under the opportunity they address; pruned solutions stay in the tree with `(status: pruned)` for the decision record.
