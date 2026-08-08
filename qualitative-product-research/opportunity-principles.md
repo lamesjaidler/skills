@@ -43,22 +43,22 @@ Every node must pass all seven. Rewrite violations *before* writing the file.
 The dominant failure mode: handed an outcome, a model emits twenty plausible generic bullets that read like findings.
 
 - **Cap output.** At most ~4 candidate opportunities per moment. Volume is not insight.
-- **Structure by moment, not by invented theme.** The experience map's moments are the only headings the opportunity space uses. A label you coined to summarise a pattern — "Discovery", "Momentum", "Attribution & Signal" — is analysis, not structure; say it in the prose under the moment, don't promote it to a heading that replaces the moment.
+- **Structure by moment, not by invented theme.** The experience map's moments are the only headings the opportunity space uses. A label you coined to summarise a pattern — "Discovery", "Momentum", "Attribution & Signal" — is analysis, not structure.
 - **Every hypothesis node carries a falsifier** — the specific past-behaviour question that would kill it. No falsifier, no node.
 - **Never present a hypothesis as a finding.** Evidence tags are structural, not decorative.
-- **Refuse to prioritise a hypothesis-only tree.** Ranking guesses by impact × reach is fake precision; the ranking inherits none of the confidence the numbers imply. Say so, and point at the interview plan.
+- **Refuse to prioritise a hypothesis-only tree — full stop, not "with a caveat."** Any ordering counts: a numeric impact × reach score, an ordinal 1–8 table against qualitative criteria, or an unranked "top three for the slide" — all borrow confidence the guesses don't have. Refusing means the interview plan or a cheapest-test-first sequence *replaces* the ranking, not a ranking with a caveat bolted on — a warning paragraph sitting next to a delivered order is still the failure. Relabelling the deliverable doesn't fix it either: calling the same ordered list "hypotheses" instead of "priorities" changes the label, not what was handed over.
 - **Mirror language.** In evidence mode the node text *is* the interviewee's own words — verbatim, or a tight trim — not an analyst-authored headline with the real quote filed underneath as supporting evidence. A node that reads as a crisp infinitive phrase ("Trace a spike back to its cause") with the participant's actual sentence one line down in the evidence tag has been relabelled, even when the citation is correct.
 - **Quarantine solutions.** Features pitched mid-session go to a parked list, never into the opportunity space.
 
 ## Evidence tags
 
-Every node carries exactly one:
+Every opportunity node carries exactly one:
 
 - `✓ P3, P7 (2 interviews)` — heard, with the participants who said it.
 - `⚠ ASSUMPTION — untested` — reasoned, not heard. Must be followed by a `falsifier:` line.
 - `✗ CONTRADICTED (P7) — <what contradicted it>` — struck through in the map, kept for the record.
 
-An untagged node is a bug, not a style choice.
+An untagged opportunity node is a bug, not a style choice.
 
 ## Map file format
 
@@ -72,12 +72,17 @@ Increase median monthly new listeners per active producer
 # Experience map
 finish track → prep release → distribute → promote → read stats → iterate
 
+# Interviews
+P3 — Mara, Lisbon, bedroom producer (lo-fi/downtempo), ~4 releases in 18 months
+  experience: hand-posts every release to Instagram, two Discords, a subreddit, a WhatsApp group; can't tell which one moved a number
+  opportunities heard: "I burned an evening and I think it got me six plays"; "It's all one number"
+
 # Opportunity space
-- Promoting a release [moment]
+- Promote [moment]
   - "I don't know where my next 100 listeners come from"
       evidence: ⚠ ASSUMPTION — untested
       falsifier: "Walk me through how you found your last 100 listeners."
-  - "I burn out posting to 4 platforms for 6 plays"
+  - "I burned an evening and I think it got me six plays"
       evidence: ✓ P3, P7 (2 interviews)
 
 # Parked solutions
@@ -93,12 +98,12 @@ On a re-run the file is **updated, never overwritten**: new evidence promotes `�
 
 ## Red flags — stop
 
-- Naming an opportunity no customer said.
-- A node in the tree with no evidence tag.
+- Naming an opportunity no customer said without tagging it ⚠ ASSUMPTION.
+- An opportunity node in the tree with no evidence tag.
 - An outcome sitting in the map with no type recorded from the triage table — silently accepted, not triaged.
 - An opportunity phrased as "increase X" — that is an outcome, not an opportunity.
 - Opportunities grouped under an invented theme heading ("Discovery", "Momentum", "Attribution & Signal") instead of a moment on the experience map.
 - More than ~4 opportunities sitting under a single moment.
 - Producing a tree in evidence mode without having synthesised each interview separately first.
 - "Run more interviews" offered with no interview plan of actual, askable questions attached.
-- Ranking, scoring, or roadmapping assumption-tagged nodes.
+- Ranking, scoring, or roadmapping assumption-tagged nodes — ordinal or numeric, with or without a caveat attached.
