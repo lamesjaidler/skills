@@ -38,7 +38,9 @@ Added `mapping-opportunities` (still **experimental**):
   structured opportunity space — triages the outcome, synthesises each
   interview separately before amalgamating, tags every node as evidenced or
   assumed, and writes a persistent, updatable map to
-  `docs/discovery/<outcome-slug>-opportunity-map.md` in the project it runs in.
+  `docs/discovery/<outcome-slug>-opportunity-map.md` in the project it runs
+  in, falling back to showing the map inline and asking where to write it
+  if no project root is evident.
 - Refuses to rank or roadmap a hypothesis-only tree, and returns an interview
   plan targeting the weakest-evidence nodes instead.
 - Shared `opportunity-principles.md` at the plugin root, consumed via
