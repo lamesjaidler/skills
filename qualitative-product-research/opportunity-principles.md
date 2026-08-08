@@ -47,7 +47,7 @@ The dominant failure mode: handed an outcome, a model emits twenty plausible gen
 - **Every hypothesis node carries a falsifier** — the specific past-behaviour question that would kill it. No falsifier, no node.
 - **Never present a hypothesis as a finding.** Evidence tags are structural, not decorative.
 - **Refuse to prioritise a hypothesis-only tree — full stop, not "with a caveat."** Any ordering counts: a numeric impact × reach score, an ordinal 1–8 table against qualitative criteria, or an unranked "top three for the slide" — all borrow confidence the guesses don't have. Refusing means the interview plan or a cheapest-test-first sequence *replaces* the ranking, not a ranking with a caveat bolted on — a warning paragraph sitting next to a delivered order is still the failure. Relabelling the deliverable doesn't fix it either: calling the same ordered list "hypotheses" instead of "priorities" changes the label, not what was handed over.
-- **Mirror language.** In evidence mode the node text *is* the interviewee's own words — verbatim, or a tight trim — not an analyst-authored headline with the real quote filed underneath as supporting evidence. A node that reads as a crisp infinitive phrase ("Trace a spike back to its cause") with the participant's actual sentence one line down in the evidence tag has been relabelled, even when the citation is correct.
+- **Mirror language.** In evidence mode the node text *is* the interviewee's own words — verbatim, or a tight trim — not an analyst-authored headline with the real quote filed underneath as supporting evidence. A node that reads as a crisp infinitive phrase ("Trace a spike back to its cause") with the participant's actual sentence one line down in the evidence tag has been relabelled, even when the citation is correct. When several participants voice the same need, the node text is one of their actual sentences and the tag lists everyone who said a version of it.
 - **Quarantine solutions.** Features pitched mid-session go to a parked list, never into the opportunity space.
 
 ## Evidence tags
@@ -76,6 +76,10 @@ finish track → prep release → distribute → promote → read stats → iter
 P3 — Mara, Lisbon, bedroom producer (lo-fi/downtempo), ~4 releases in 18 months
   experience: hand-posts every release to Instagram, two Discords, a subreddit, a WhatsApp group; can't tell which one moved a number
   opportunities heard: "I burned an evening and I think it got me six plays"; "It's all one number"
+
+P7 — Dan, Leeds, part-time producer (house), releases roughly quarterly
+  experience: hand-messages ~30 DJs one by one from a Notes-app list; can't tell which contact led to plays
+  opportunities heard: "If I spend four of them messaging DJs that's four hours I didn't spend producing"; "I have no idea if that was him"
 
 # Opportunity space
 - Promote [moment]
