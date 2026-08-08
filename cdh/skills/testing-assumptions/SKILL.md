@@ -28,13 +28,13 @@ Per solution: a 2x2 of importance × evidence, in the file. Only the top-right (
 
 ## 3. Test
 
-Fill `${CLAUDE_PLUGIN_ROOT}/templates/assumption-test-spec.md` per top-right assumption, embedded in the solution's assumptions file.
+Fill `${CLAUDE_PLUGIN_ROOT}/templates/assumption-test-spec.md` per top-right assumption, embedded in the solution's file.
 
 - Techniques: unmoderated test, one-question survey, prototype, fake-door, wizard-of-oz, data mining.
 - Simulate one **moment** of the experience where the participant behaves consistently or inconsistently with the assumption. Observed behavior decides; stated opinion counts as zero (AP9).
 - **1–2 days, small n.** Small and weak first; bigger/stronger only for assumptions that keep mattering.
 - Criterion pre-set, raw numbers: "at least 3 of 10", never percentages, fixed before data collection, right audience named (AP9).
-- When a solution's first test launches, flip its `ost.md` status: `candidate` → `testing`.
+- When a solution's test spec is delivered, flip its `ost.md` status: `candidate` → `testing`.
 
 ## 4. Record results
 
