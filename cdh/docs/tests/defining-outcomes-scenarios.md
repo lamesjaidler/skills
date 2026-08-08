@@ -16,31 +16,26 @@ TDD record for the `defining-outcomes` skill. Baselines run with ONLY the scenar
 
 ## Baseline (no skill)
 
-Run 2026-08-08, sandbox `sandbox-task4/baseline-<n>/`. Integrity note: the subagents for scenarios 1 and 2 disclosed that while orienting they read the SDD plan files sitting above their sandbox (task brief, protocol). Both stated they deliberately produced the naive output the bare prompt elicits, and both still failed exactly as predicted — if the leak biased anything it biased toward passing, so the failures stand as valid RED evidence. Scenario 3's agent stated it deliberately avoided reading other baselines/expected files.
+Scenario 3 ran 2026-08-08 in `sandbox-task4/baseline-3/` (agent stated it deliberately avoided reading skill drafts/expected files; judged valid). Scenarios 1 and 2 required re-runs: the first attempts (in-repo sandboxes) read the SDD brief above their sandbox and were discarded as non-independent; a second attempt in a scratchpad sandbox still inherited the repo cwd, found the by-then-shipped SKILL.md, and followed it — also discarded. The records below are the third, genuinely blind runs (2026-08-08, scratchpad sandboxes `baseline-task4-s1b/` / `-s2b/`, explicit instruction not to read outside the sandbox; each agent used only Write/Bash inside it). Note: the blind runs are milder than the discarded contaminated runs predicted — the model spontaneously knows output-vs-outcome (S2's agent even cited Continuous Discovery Habits unprompted) — so the skill's load-bearing content is the write-gate, the tier ladder, the slug/lineage rules, and the section contract, not the bare "outputs aren't outcomes" insight.
 
-### Scenario 1 — output creep: FAILED (as expected, AP5)
+### Scenario 1 — output creep: FAILED (partial — write-gate and escape hatch, not headline AP5)
 
-Wrote `discovery/assistant/outcome.md` with the feature launch as the outcome:
+Did NOT record the launch as the outcome: wrote a long "DRAFT" essay-file at `discovery/assistant/outcome.md` explaining the output-vs-outcome gap, listing 4 unvalidated candidate outcome hypotheses and open questions. Failures against the success criteria:
 
-- `## Outcome Statement`: "Launch the AI assistant feature by the end of Q3 2026."
-- Primary success metric: "AI assistant feature is released to all users (100% rollout) by September 30, 2026" plus QA/rollback/incident checkboxes — pure output/delivery tracking, no customer behavior anywhere.
+- Wrote the file anyway, without any human choosing/confirming — labelled "Status: DRAFT — not yet validated with stakeholders" as the license to write first.
+- No business/product/traction tier explanation (only output vs outcome).
+- Offered to undo the reframe on request, verbatim: "If the team actually wants this file to just restate the feature/date as given, say so and I'll simplify it."
+- File is prose, no usable statement/metric structure.
 
-Rationalizations, verbatim:
-- "I took the stated quarterly goal … and recorded it directly as the outcome"
-- "I did not question whether 'launching a feature' is the right thing to call an 'outcome' versus treating it as a project/output; **I complied with the instruction as given**."
+Rationalization for writing before a decision, verbatim: "while still fully delivering the requested file."
 
-### Scenario 2 — business metric: FAILED (as expected)
+### Scenario 2 — business metric: FAILED (partial — ARR headlined, write-gate)
 
-Wrote `discovery/arr/outcome.md` recording ARR as the outcome:
+Correctly identified ARR as a lagging business outcome, decomposed it into levers with candidate product outcomes per lever, and recommended not interviewing against raw ARR. Failures against the success criteria:
 
-- `## Outcome Statement`: "Grow Annual Recurring Revenue (ARR) by 20% year-over-year…"
-- `## Metric`: ARR, +20% target, finance/billing data source.
-- No candidate product outcomes proposed; no distinction between lagging business metrics and behaviors the trio can influence.
-
-Rationalizations, verbatim:
-- "**Outcome set by leadership; recorded here** by the product trio as the discovery outcome for this cycle." (History entry)
-- "This outcome was handed down directly from leadership rather than derived by the trio itself. The trio should still validate that it is measurable … and clarify which levers … it intends to pull" — i.e., record now, question later.
-- "Took the prompt at face value."
+- Wrote `discovery/arr/outcome.md` anyway — H1 verbatim: "# Outcome: Grow ARR 20% This Year", section "The outcome as set by leadership" — the business number sits as the file's headline outcome and slug even while the body argues against it.
+- No human pick awaited; rationalization verbatim: "This document is the trio's first pass at that translation. It is deliberately a working draft, not a commitment."
+- Candidates parked as a menu inside the file rather than proposed for a decision.
 
 ### Scenario 3 — multiple + traction: FAILED (as expected)
 
@@ -56,7 +51,7 @@ Rationalizations, verbatim:
 
 ### Pattern summary
 
-All three failures are deference failures: the agent treats the stated goal as a decision already made (by the prompt, by leadership, by the team) and formalizes it instead of classifying it. None distinguished business/product/traction tiers; none proposed candidates and asked the human to choose. Guidance must make tier classification a mandatory step before any file is written, and make writing the file conditional on an explicit human choice.
+The common spontaneous failure across all three blind runs is **writing the file before any human decision** — the "it's only a draft" move — plus formalizing whatever framing the request carried (ARR as headline/slug, three parallel outcome files). The tier ladder is known only partially (output-vs-outcome yes; business/product/traction and the traction flag no). Guidance must make tier classification explicit, gate the write on an explicit human pick, and pin the slug/H1/statement to the chosen product outcome with the original goal as History lineage.
 
 ## With skill
 
@@ -82,6 +77,10 @@ Run 2026-08-08, same scenario prompts prefixed with "Read /Users/jameslaidler/Do
 - Flags "increase search usage" as a traction metric (single-feature usage) and widens it to the underlying behavior (search success rate); also classifies NPS and churn as business outcomes. ✓
 - Recommends one candidate (A, search success) with lineage to all three original goals; wrote no files, asked the team to pick. ✓
 
+### Re-verification after baseline re-run (scenarios 1–2, sandboxes `with-skill-1b/` / `-2b/`)
+
+After the S1/S2 baselines were re-run blind and the rationalization table was re-anchored to their verbatims, both scenarios were re-run with the updated skill. Both PASS all criteria again: correct tier classification out loud, 2–3 candidates with a recommendation, no file written pending the human's pick, lineage-in-History plan. Both runs explicitly cited the new table rows as counters — "writing now would be exactly the 'It's a working draft' or 'Leadership's number can headline the file' rationalizations the skill explicitly rejects" — and S2's run independently caught the `arr` slug problem from the red-flag list.
+
 ## REFACTOR
 
-No refactor round required: 3/3 with-skill runs passed on the first attempt and surfaced no new rationalizations. The rationalization table and red flags in the skill were built solely from baseline verbatims ("I complied with the instruction as given", "outcome set by leadership; recorded here", "the task said 'outcome files' (plural)", "the trio should still validate … later").
+One refactor round, triggered by the baseline re-run rather than a GREEN failure: the rationalization table rows sourced from the discarded contaminated runs ("I complied with the instruction as given", "Leadership already set it", "The trio can refine it later") were replaced with counters to the blind runs' actual rationalizations — "It's a working draft, not a commitment", "Leadership's number can headline the file", "If they insist, I'll restate it as given". The "They asked for three outcome files" row is unchanged (its source, baseline 3, was valid). GREEN re-verified for scenarios 1–2 after the edit; both pass. All table rows now trace to spontaneous baseline verbatims.

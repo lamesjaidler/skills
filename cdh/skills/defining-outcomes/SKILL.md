@@ -51,10 +51,10 @@ Downstream skills depend on these exact section names: the OST copies `## Outcom
 
 | Excuse | Reality |
 |---|---|
-| "I complied with the instruction as given" | Classifying the goal's tier IS the job. An output in the file poisons every downstream artifact. |
-| "Leadership already set it" | Leadership owns business outcomes. The trio negotiates the product outcome that drives it; the leadership goal is lineage in History. |
+| "It's a working draft, not a commitment" | No draft tier exists — downstream skills read whatever the file says. Write only after the human picks. |
+| "Leadership's number can headline the file" | H1, slug, and statement ARE the outcome; the business goal is History lineage. |
 | "They asked for three outcome files" | The letter of the request doesn't override one outcome per trio. Recommend one, park the rest, human decides. |
-| "The trio can refine it later" | Later never comes once the file exists. Reframe before writing, not after. |
+| "If they insist, I'll restate it as given" | An output is never on the menu; the human picks among product outcomes. |
 
 ## Red flags — stop and reframe
 
