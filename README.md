@@ -8,11 +8,12 @@ A [Claude Code](https://code.claude.com) plugin marketplace of small agent skill
 | `product-critique` | `critique-implementation-plan` | Plans look ready to execute but hide steps that force whoever runs them to guess — wrong file, missing test, stale anchor. | After a plan is drafted, ask for a review (or invoke `critique-implementation-plan`). Same format: numbered findings as proposed plan edits, scoped with you before anything is applied. |
 | `qualitative-product-research` | `practicing-user-interviews` | You're about to interview real users, but untrained questions lean on opinions and hypotheticals that produce flattering, useless answers — and there's nowhere safe to practice. | Run it in your app's repo and say "be a user I can interview". It plays a persona grounded in the repo and coaches each question toward specific past behaviour, live. |
 | `qualitative-product-research` | `live-interview-copilot` | Mid-interview, under time pressure, it's hard to pick the best next question — easy to ask double-barrelled or leading ones and waste the session. | Start it before a live call, give it the research goal, then paste each reply. You get one short, speakable next question back per turn. |
+| `qualitative-product-research` | `mapping-opportunities` | You have an outcome and a pile of interview notes — or no notes at all — and no structured way to get from either to the customer needs that actually drive it. Guessed opportunities end up on the roadmap looking like findings. | Run it in your project and say "map the opportunity space for this outcome". It triages the outcome, synthesises each interview separately, and writes an evidence-tagged map to `docs/discovery/` — every node marked as heard or assumed. |
 
 Each plugin bundles the skills for one phase of product work: `product-critique` reviews the artifacts (critique the *what*, then the *how*); `qualitative-product-research` runs the discovery interviews.
 
 > [!WARNING]
-> **Experimental.** `product-critique` is `v0.1.0` and only lightly tested; `qualitative-product-research` is `v0.1.0`. Expect rough edges and breaking changes. Feedback and issues welcome.
+> **Experimental.** `product-critique` is `v0.1.0` and only lightly tested; `qualitative-product-research` is `v0.2.0`. Expect rough edges and breaking changes. Feedback and issues welcome.
 
 ## Install
 
@@ -60,12 +61,14 @@ skills/                                  # repo root = the marketplace
 │   └── skills/
 │       ├── critique-spec/SKILL.md
 │       └── critique-implementation-plan/SKILL.md
-├── qualitative-product-research/        # plugin (2 skills + shared resource)
+├── qualitative-product-research/        # plugin (3 skills + shared resources)
 │   ├── .claude-plugin/plugin.json
 │   ├── interview-principles.md          # shared via ${CLAUDE_PLUGIN_ROOT}
+│   ├── opportunity-principles.md        # shared via ${CLAUDE_PLUGIN_ROOT}
 │   └── skills/
 │       ├── practicing-user-interviews/SKILL.md
-│       └── live-interview-copilot/SKILL.md
+│       ├── live-interview-copilot/SKILL.md
+│       └── mapping-opportunities/SKILL.md
 ├── scripts/
 │   ├── validate-marketplace.sh          # manifest validator (run in CI)
 │   ├── dev.sh                           # load a plugin live into a throwaway session
