@@ -46,7 +46,8 @@ The dominant failure mode: handed an outcome, a model emits twenty plausible gen
 - **Structure by moment, not by invented theme.** The experience map's moments are the only headings the opportunity space uses. A label you coined to summarise a pattern — "Discovery", "Momentum", "Attribution & Signal" — is analysis, not structure.
 - **Every hypothesis node carries a falsifier** — the specific past-behaviour question that would kill it. No falsifier, no node.
 - **Never present a hypothesis as a finding.** Evidence tags are structural, not decorative.
-- **Refuse to prioritise a hypothesis-only tree — full stop, not "with a caveat."** Any ordering counts: a numeric impact × reach score, an ordinal 1–8 table against qualitative criteria, or an unranked "top three for the slide" — all borrow confidence the guesses don't have. Refusing means the interview plan or a cheapest-test-first sequence *replaces* the ranking, not a ranking with a caveat bolted on — a warning paragraph sitting next to a delivered order is still the failure. Relabelling the deliverable doesn't fix it either: calling the same ordered list "hypotheses" instead of "priorities" changes the label, not what was handed over.
+- **Refuse to prioritise — full stop, not "with a caveat."** This isn't scoped to `⚠ ASSUMPTION` nodes: a `✓` tag on thin evidence — a single interview, a handful of tickets — borrows exactly the same unearned confidence once it's put in order, so treating a low count as licence is the same failure in a thinner disguise. Any ordering counts: a numeric impact × reach score, an ordinal 1–8 table against qualitative criteria, or an unranked "top three for the slide" — all borrow confidence the tree doesn't have. Refusing means the interview plan or a cheapest-test-first sequence *replaces* the ranking, not a ranking with a caveat bolted on — a warning paragraph sitting next to a delivered order is still the failure. Relabelling the deliverable doesn't fix it either: calling the same ordered list "hypotheses" instead of "priorities" changes the label, not what was handed over.
+- **A cheapest-test-first sequence is the legitimate substitute — but only if it's ordered by the right thing.** It is ordered by **cost and speed to test with zero budget**, not by assumed impact: a property of what your own team can check quickly and cheaply, never a property of the guesses or the thin evidence themselves. Present it as a validation sequence, never as a build order or roadmap order — the moment "test this first" reads as "build this first," it has become the ranking it was supposed to replace.
 - **Mirror language.** In evidence mode the node text *is* the interviewee's own words — verbatim, or a tight trim — not an analyst-authored headline with the real quote filed underneath as supporting evidence. A node that reads as a crisp infinitive phrase ("Trace a spike back to its cause") with the participant's actual sentence one line down in the evidence tag has been relabelled, even when the citation is correct. When several participants voice the same need, the node text is one of their actual sentences and the tag lists everyone who said a version of it.
 - **Quarantine solutions.** Features pitched mid-session go to a parked list, never into the opportunity space.
 
@@ -62,7 +63,7 @@ An untagged opportunity node is a bug, not a style choice.
 
 ## Map file format
 
-`docs/discovery/<outcome-slug>-opportunity-map.md`, relative to the root of the project being worked in:
+`docs/discovery/<outcome-slug>-opportunity-map.md`, relative to the root of the project being worked in — not the plugin's repo. If no project root is evident, say so and show the map inline instead of writing to disk:
 
 ```markdown
 # Outcome
@@ -100,6 +101,8 @@ P7 — Dan, Leeds, part-time producer (house), releases roughly quarterly
 
 The interview-plan section is literal, askable questions, numbered, ready to use in the next call — never a paragraph recommending "more interviews" or "further validation" with no questions attached. If the next question can't be written out verbatim, the section isn't finished.
 
+Falsifiers and interview-plan questions are both interview questions before they are anything else — check them against the question leaks in `${CLAUDE_PLUGIN_ROOT}/interview-principles.md` before writing them down.
+
 On a re-run the file is **updated, never overwritten**: new evidence promotes `⚠ ASSUMPTION` nodes to `✓`, contradicted nodes are struck through with a note, and the affected branch is re-balanced.
 
 ## Red flags — stop
@@ -112,4 +115,4 @@ On a re-run the file is **updated, never overwritten**: new evidence promotes `�
 - More than ~4 opportunities sitting under a single moment.
 - Producing a tree in evidence mode without having synthesised each interview separately first.
 - "Run more interviews" offered with no interview plan of actual, askable questions attached.
-- Ranking, scoring, or roadmapping assumption-tagged nodes — ordinal or numeric, with or without a caveat attached.
+- Ranking, scoring, or roadmapping assumption-tagged nodes, or `✓` nodes on thin evidence (a single interview, a handful of tickets) — ordinal or numeric, with or without a caveat attached.
