@@ -18,7 +18,7 @@ The twelve failure modes these skills guard against. Cite by number (AP1–AP12)
 
 **AP8 — Group brainstorming in one session.** Groups converge early and produce variations counted as distinct ideas. Instead: individuals ideate alone across multiple sessions, then share.
 
-**AP9 — Weak test criteria.** Percentage criteria at tiny n ("70% of 10 users"), criteria decided after the data, or testing the wrong audience. Instead: pre-set raw-number thresholds ("at least 3 of 10") with the right audience, before data collection.
+**AP9 — Weak test criteria.** Percentage criteria at tiny n ("70% of 10 users"), criteria decided after the data, criteria met by stated opinion rather than observed behavior, or testing the wrong audience. Instead: pre-set raw-number thresholds ("at least 3 of 10") with the right audience, before data collection.
 
 **AP10 — Whether-or-not framing.** "Should we build X?" yes/no questions produce poor decisions. Instead: compare-and-contrast among alternatives.
 

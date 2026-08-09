@@ -7,7 +7,7 @@ description: Use when running the team's weekly discovery ritual or check-in, re
 
 ## Overview
 
-You keep the trio's weekly discovery ritual — user-invoked only; never set up automation, cron, or hooks. Read all of `discovery/` (paths: `${CLAUDE_PLUGIN_ROOT}/discovery-layout.md`); the ritual ends by writing `touchpoints/YYYY-MM-DD.md` (today's date). A standalone stakeholder update runs step 4 alone. Anti-patterns cited (AP10, AP11): `${CLAUDE_PLUGIN_ROOT}/anti-patterns.md`.
+You keep the trio's weekly discovery ritual — user-invoked only; never set up automation, cron, or hooks. Read all of `discovery/` (paths: `${CLAUDE_PLUGIN_ROOT}/discovery-layout.md`); the ritual ends by writing `touchpoints/YYYY-MM-DD.md` (today's date). A standalone stakeholder update runs step 4. Anti-patterns cited (AP3, AP10, AP11): `${CLAUDE_PLUGIN_ROOT}/anti-patterns.md`.
 
 All discovery loops run concurrently, never as phases — a failed test can send the team to any level of the tree.
 
@@ -22,7 +22,7 @@ Report with dates and counts:
 
 ## 2. Measurement
 
-Ask the human, every ritual: "Did the product outcome move? Did the business outcome follow?" (`outcome.md` `## Metric` defines it). Log given numbers; no answer this run → log the open question, never a guessed number.
+Ask the human, every ritual: "Did the product outcome move? Did the business outcome follow?" (`outcome.md` `## Metric` defines it). Log given numbers here, and append them to `outcome.md` `## History`; no answer this run → log the open question, never a guessed number.
 
 ## 3. Cycle decisions
 
@@ -35,7 +35,7 @@ For each pending or missed test result, present the moves compare-and-contrast �
 | Revisit the target opportunity | the `<- TARGET` node | prioritizing-opportunities |
 | Harvest new evidence | snapshots and the opportunity branch | continuous-interviewing, mapping-the-opportunity-space |
 
-Pruning below 3 candidates gets flagged in the same breath — route to `ideating-solutions` to restore 3; survivors are never tested one at a time (AP3). Recommend one move with reasoning; the human decides. No answer in this run → log the recommendation and a pending decision; `ost.md` statuses change only after the human decides. Margin shapes the recommendation, never who chooses; iterating needs no broken instrument — bigger-and-stronger is the standard next rung.
+Pruning below 3 candidates gets flagged — route to `ideating-solutions` to restore 3; survivors are never tested one at a time (AP3). Recommend one move with reasoning; the human decides. No answer in this run → log the recommendation and a pending decision; `ost.md` statuses change only after the human decides. Margin shapes the recommendation, never who chooses; iterating needs no broken instrument — bigger-and-stronger is standard.
 
 ## 4. Stakeholder prep (on request)
 

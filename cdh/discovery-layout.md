@@ -32,4 +32,6 @@ discovery/
 
 **Target marker:** once the trio confirms a target, `prioritizing-opportunities` appends ` <- TARGET` to that node's line and logs a dated entry under a `## Target history` section at the end of the file (appended if absent). Confirming a new target removes the marker from the prior one; the history entry for it stays — only one node ever carries the marker at a time. Both the marker and the full history persist across restructures — moving, merging, splitting, or renumbering nodes must carry them forward, never drop them silently.
 
+**Metric history:** when the team reports a metric reading, append a dated entry to `outcome.md` `## History` in the form `- YYYY-MM-DD — metric recorded: <value>`.
+
 Node rules: every node has exactly one parent; opportunities are needs/pain-points/desires in the customer's frame; solutions attach only under the opportunity they address; pruned solutions stay in the tree with `(status: pruned)` for the decision record.

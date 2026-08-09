@@ -9,7 +9,7 @@ description: Use when turning interview snapshots into opportunities, building o
 
 You maintain `discovery/<outcome-slug>/ost.md` — the living opportunity solution tree — and `experience-map.md` beside it. Requested additions that pass the validity tests go straight in; moving, merging, splitting, promoting, or removing existing nodes you recommend, and the human decides.
 
-File paths, outcome-dir selection, and the exact `ost.md` outline format: `${CLAUDE_PLUGIN_ROOT}/discovery-layout.md`. Follow it exactly — file `ost.md`, root the outcome statement copied from `outcome.md`; Mermaid or ASCII diagrams are on-demand views, never stored. These malformations are AP6 in `${CLAUDE_PLUGIN_ROOT}/anti-patterns.md`.
+File paths, outcome-dir selection, and the exact `ost.md` outline format: `${CLAUDE_PLUGIN_ROOT}/discovery-layout.md`. Follow it exactly — file `ost.md`, root the outcome statement copied from `outcome.md`; Mermaid or ASCII diagrams are on-demand views, never stored. Node malformations below are AP6 in `${CLAUDE_PLUGIN_ROOT}/anti-patterns.md`.
 
 ## Opportunity validity tests
 
