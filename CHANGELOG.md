@@ -6,6 +6,29 @@ grouped by plugin and release.
 
 The format loosely follows [Keep a Changelog](https://keepachangelog.com/).
 
+## continuous-discovery
+
+### [0.0.0] — 2026-08-09
+
+Initial release. **Experimental** — expect rough edges and breaking changes.
+
+Continuous Discovery Habits (Teresa Torres) as agent skills:
+
+- `defining-outcomes`: negotiate and define a product outcome to anchor discovery.
+- `continuous-interviewing`: run weekly customer interviews that surface real
+  stories and opportunities.
+- `mapping-the-opportunity-space`: build and maintain an opportunity solution
+  tree from interview evidence.
+- `prioritizing-opportunities`: assess and select a target opportunity.
+- `ideating-solutions`: generate and compare multiple solutions for the target
+  opportunity.
+- `testing-assumptions`: identify, map, and test the riskiest assumptions behind
+  candidate solutions.
+- `running-weekly-touchpoints`: the weekly discovery ritual tying the habits
+  together.
+- Shared plugin-root resources (`discovery-layout.md`, `anti-patterns.md`,
+  `templates/`) consumed by the skills via `${CLAUDE_PLUGIN_ROOT}`.
+
 ## product-critique
 
 ### [0.1.0] — 2026-06-19
