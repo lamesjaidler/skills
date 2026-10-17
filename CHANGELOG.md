@@ -40,3 +40,17 @@ Added to the marketplace. **Experimental.**
   a real, live interview.
 - Shared `interview-principles.md` at the plugin root, consumed by both skills
   via `${CLAUDE_PLUGIN_ROOT}`.
+
+## product-development
+
+### [0.0.0] — 2026-10-17
+
+Added to the marketplace. **Experimental.**
+
+- `create-raw-prd` skill: grills you on a product idea (via
+  `mattpocock-skills:grilling`), checks that every PRD section can be written
+  from your answers, then writes a product-only raw PRD to
+  `docs/prd/<slug>.md`, ready for critique.
+- Depends on the `mattpocock-skills` plugin from `claude-plugins-official`. The
+  root `marketplace.json` now allowlists that marketplace for cross-marketplace
+  dependencies.

@@ -1,0 +1,23 @@
+{
+  "name": "product-development",
+  "displayName": "Product Development",
+  "version": "0.0.0",
+  "description": "Turn a product idea into a raw PRD: get grilled on the idea first, then get a product-only draft (what and why) ready for critique.",
+  "author": {
+    "name": "James Laidler",
+    "email": "james@electrify.video"
+  },
+  "homepage": "https://github.com/lamesjaidler/skills",
+  "repository": "https://github.com/lamesjaidler/skills",
+  "license": "MIT",
+  "keywords": [
+    "prd",
+    "product-requirements",
+    "grilling",
+    "interview",
+    "planning"
+  ],
+  "dependencies": [
+    { "name": "mattpocock-skills", "marketplace": "claude-plugins-official" }
+  ]
+}

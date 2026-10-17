@@ -1,10 +1,13 @@
 {
   "name": "skills",
-  "description": "Agent skills for product work: critiquing specs and implementation plans before execution, and running qualitative user-research interviews.",
+  "description": "Agent skills for product work: drafting PRDs, critiquing specs and implementation plans before execution, and running qualitative user-research interviews.",
   "owner": {
     "name": "lamesjaidler",
     "email": "james@electrify.video"
   },
+  "allowCrossMarketplaceDependenciesOn": [
+    "claude-plugins-official"
+  ],
   "plugins": [
     {
       "name": "product-critique",
@@ -15,6 +18,11 @@
       "name": "qualitative-product-research",
       "source": "./qualitative-product-research",
       "description": "Qualitative user-research skills: rehearse interviews with a coached roleplay, and get live next-question suggestions during a real interview."
+    },
+    {
+      "name": "product-development",
+      "source": "./product-development",
+      "description": "Turn a product idea into a raw PRD: get grilled on the idea first, then get a product-only draft (what and why) ready for critique."
     }
   ]
 }
