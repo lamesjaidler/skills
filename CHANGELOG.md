@@ -8,6 +8,12 @@ The format loosely follows [Keep a Changelog](https://keepachangelog.com/).
 
 ## product-critique
 
+### [0.1.1] — 2026-10-17
+
+- `critique-spec` trigger narrowed to specs and design docs. PRDs now go to
+  `critique-prd` in `product-development`, so the two skills no longer compete
+  for the same requests.
+
 ### [0.1.0] — 2026-06-19
 
 `critique-spec` refinements (still **experimental**):
@@ -42,6 +48,16 @@ Added to the marketplace. **Experimental.**
   via `${CLAUDE_PLUGIN_ROOT}`.
 
 ## product-development
+
+### [0.1.0] — 2026-10-17
+
+- `critique-prd` skill: reviews a PRD before the spec is written and returns
+  numbered, severity-tagged findings as proposed PRD edits. It keeps the PRD
+  product-only (build details are removed and parked for the spec) and
+  traceable (unchecked beliefs become `A` items; missing product decisions
+  become `Q` items with a recommended answer). After fixes are applied it sets
+  the status line to `critiqued · <date>`. Resolves `create-raw-prd`'s
+  hand-off pointer.
 
 ### [0.0.0] — 2026-10-17
 
