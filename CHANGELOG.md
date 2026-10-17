@@ -8,6 +8,18 @@ The format loosely follows [Keep a Changelog](https://keepachangelog.com/).
 
 ## continuous-discovery
 
+### [0.1.0] — 2026-08-09
+
+- `ideation-swarm`: new skill. Three persona subagents (product manager,
+  designer, engineer) ideate in isolated contexts, are shown the pooled result,
+  then ideate again. Returns every idea attributed by persona and round. Output
+  is agent-authored stimulus that widens the trio's own pool — it is never
+  ranked, never narrowed, and never written to `ost.md`; narrowing stays with
+  the humans in `ideating-solutions`.
+- `discovery-layout.md`: adds `discovery/<outcome-slug>/ideation/YYYY-MM-DD-swarm.md`,
+  written by `ideation-swarm` only on request, and states that ideation pools
+  are not evidence.
+
 ### [0.0.0] — 2026-08-09
 
 Initial release. **Experimental** — expect rough edges and breaking changes.

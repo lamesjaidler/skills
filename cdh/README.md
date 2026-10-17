@@ -17,6 +17,7 @@ Based on *Continuous Discovery Habits* by Teresa Torres. This plugin is an indep
 | `mapping-the-opportunity-space` | Turning interview snapshots into opportunities or building and updating the opportunity solution tree. |
 | `prioritizing-opportunities` | Choosing which opportunity to pursue next—comparing siblings on the tree and descending. |
 | `ideating-solutions` | Generating solution ideas for a target opportunity or narrowing ideas down to a set worth testing. |
+| `ideation-swarm` | Widening a thin idea pool for a target opportunity—three persona subagents ideate in isolation, see the pool, ideate again. Output is agent-authored stimulus for the trio's own ideation, never a shortlist. |
 | `testing-assumptions` | De-risking candidate solutions before building—surfacing assumptions, designing quick tests, and recording results. |
 | `running-weekly-touchpoints` | Running the team's weekly discovery ritual—checking staleness, measurement, and what to do after a test result. |
 

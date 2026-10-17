@@ -9,6 +9,7 @@ discovery/
     outcome.md                            # outcome statement + metric + history
     experience-map.md                     # current customer experience
     ost.md                                # the living opportunity solution tree (source of truth)
+    ideation/YYYY-MM-DD-swarm.md          # agent-authored stimulus pool; written by ideation-swarm only on request
     assumptions/<solution-slug>.md        # assumptions + 2x2 placement + test specs + results
     touchpoints/YYYY-MM-DD.md             # weekly ritual log: decisions, cycle moves
 ```
@@ -16,6 +17,8 @@ discovery/
 **Selecting the outcome dir:** if exactly one `<outcome-slug>/` dir exists, use it. If several exist and the user didn't specify, ask which outcome. If none exists, the defining-outcomes skill creates one.
 
 **Snapshots are shared:** one interview yields opportunities for multiple trees. Snapshots live outside outcome dirs; each outcome's mapping skill harvests what is relevant to it.
+
+**Ideation pools are not evidence:** `ideation/` holds agent-authored stimulus from `ideation-swarm`, never customer evidence and never a decision record. Nothing in it carries an evidence tag, and no idea reaches `ost.md` from there — solutions land on the tree only through the trio's dot-vote in `ideating-solutions`.
 
 **Evidence tags:** every opportunity and insight carries its source, e.g. `[evidence: 2026-08-01-jane.md]`. Non-interview evidence (sales calls, support tickets, app reviews) is welcome and tagged with its source the same way; interviews are the privileged, weekly-refreshed source.
 
