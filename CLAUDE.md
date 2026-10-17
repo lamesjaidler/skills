@@ -63,7 +63,7 @@ Three-level nesting, each level a manifest pointing down to the next:
 ```
 
 Three plugins exist today, one phase of product work each:
-- `product-development` — drafts a raw, product-only PRD by grilling the user first (`create-raw-prd`). Its output is meant for a future `critique-prd` skill.
+- `product-development` — drafts a raw, product-only PRD by grilling the user first (`create-raw-prd`), then critiques it before the spec is written (`critique-prd`). Findings return as proposed edits; missing product decisions become `Q` items rather than critic-invented rules.
 - `product-critique` — reviews planning artifacts before execution (`critique-spec`, then `critique-implementation-plan`). Findings return as concrete proposed edits, not a verdict.
 - `qualitative-product-research` — runs discovery interviews (`practicing-user-interviews`, `live-interview-copilot`).
 

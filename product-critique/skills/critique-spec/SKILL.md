@@ -1,6 +1,6 @@
 ---
 name: critique-spec
-description: Use when a spec, design doc, or PRD is drafted and needs review before implementation planning — including when it is described as approved, locked, final, or "just needs a quick sanity check".
+description: Use when a spec or design doc is drafted and needs review before implementation planning — including when it is described as approved, locked, final, or "just needs a quick sanity check".
 ---
 
 # Critiquing Specs

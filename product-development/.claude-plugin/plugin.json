@@ -1,8 +1,8 @@
 {
   "name": "product-development",
   "displayName": "Product Development",
-  "version": "0.0.0",
-  "description": "Turn a product idea into a raw PRD: get grilled on the idea first, then get a product-only draft (what and why) ready for critique.",
+  "version": "0.1.0",
+  "description": "Turn a product idea into a PRD ready for the spec: get grilled on the idea first, get a product-only draft (what and why), then critique it into proposed edits.",
   "author": {
     "name": "James Laidler",
     "email": "james@electrify.video"
@@ -15,6 +15,8 @@
     "product-requirements",
     "grilling",
     "interview",
+    "critique",
+    "review",
     "planning"
   ],
   "dependencies": [
