@@ -56,7 +56,7 @@ Added to the marketplace. **Experimental.**
 
 ## product-development
 
-### [0.4.0] — 2026-10-18
+### [0.5.0] — 2026-10-18
 
 - `stop-and-think` skill: steps back from a design, spec or plan and checks
   it against the goal, not against its earlier versions. It sketches the
@@ -68,6 +68,15 @@ Added to the marketplace. **Experimental.**
   saves the result with `gh pr edit`. Manual-only: it never triggers on its
   own.
 - Both skills copied unchanged from personal skills in `~/.claude/skills`.
+
+### [0.4.0] — 2026-10-18
+
+- `create-prd` skill: one command for the whole PRD flow. It runs
+  `create-raw-prd` with you, then hands the draft to a fresh subagent that
+  runs `critique-prd` without seeing the grilling, so the critique isn't
+  biased by the drafting. It then runs `critique-prd`'s fix flow with you. You
+  have to start it yourself (`/create-prd`); it never fires on its own, so "write a PRD"
+  still goes to `create-raw-prd`.
 
 ### [0.3.0] — 2026-10-18
 
