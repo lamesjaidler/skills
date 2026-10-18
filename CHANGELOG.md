@@ -8,6 +8,13 @@ The format loosely follows [Keep a Changelog](https://keepachangelog.com/).
 
 ## product-critique
 
+### Retired — 2026-10-18
+
+- Plugin removed from the marketplace. `critique-spec` and
+  `critique-implementation-plan` moved unchanged to `product-development`
+  0.3.0. Install `product-development@skills`, then uninstall
+  `product-critique@skills`.
+
 ### [0.1.1] — 2026-10-17
 
 - `critique-spec` trigger narrowed to specs and design docs. PRDs now go to
@@ -48,6 +55,12 @@ Added to the marketplace. **Experimental.**
   via `${CLAUDE_PLUGIN_ROOT}`.
 
 ## product-development
+
+### [0.3.0] — 2026-10-18
+
+- `critique-spec` and `critique-implementation-plan` skills moved here,
+  unchanged, from the retired `product-critique` plugin. One plugin now covers
+  the PRD, UI, spec and plan.
 
 ### [0.2.0] — 2026-10-18
 

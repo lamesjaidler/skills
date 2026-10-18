@@ -7,7 +7,7 @@
 # a version bump, which this script performs before refreshing the install.
 #
 # Usage: scripts/release.sh <plugin> <new-version>
-#        e.g. scripts/release.sh product-critique 0.0.1
+#        e.g. scripts/release.sh product-development 0.3.1
 set -euo pipefail
 
 plugin="${1:?usage: scripts/release.sh <plugin> <new-version>}"
