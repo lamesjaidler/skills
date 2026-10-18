@@ -49,6 +49,17 @@ Added to the marketplace. **Experimental.**
 
 ## product-development
 
+### [0.2.0] — 2026-10-18
+
+- `apply-laws-of-ux` skill: critiques an existing UI (screenshot, code, live URL, or
+  description) against the 30 Laws of UX from lawsofux.com, or prototypes a new
+  one. A critique returns numbered, severity-tagged findings, one law each,
+  with a concrete change. It then asks which findings to act on and whether to
+  prototype first or edit the code directly. Prototypes run through
+  `mattpocock-skills:prototype`: each variant takes a different trade-off
+  between laws and names the law behind each design choice. The laws live in
+  `laws.md` next to the skill, grouped into seven lenses.
+
 ### [0.1.0] — 2026-10-17
 
 - `critique-prd` skill: reviews a PRD before the spec is written and returns

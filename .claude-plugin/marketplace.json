@@ -22,7 +22,7 @@
     {
       "name": "product-development",
       "source": "./product-development",
-      "description": "Turn a product idea into a PRD ready for the spec: get grilled on the idea first, get a product-only draft (what and why), then critique it into proposed edits."
+      "description": "Turn a product idea into a PRD ready for the spec: get grilled on the idea first, get a product-only draft (what and why), then critique it into proposed edits. Prototype or critique UIs against the Laws of UX."
     }
   ]
 }

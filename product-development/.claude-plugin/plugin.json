@@ -1,8 +1,8 @@
 {
   "name": "product-development",
   "displayName": "Product Development",
-  "version": "0.1.0",
-  "description": "Turn a product idea into a PRD ready for the spec: get grilled on the idea first, get a product-only draft (what and why), then critique it into proposed edits.",
+  "version": "0.2.0",
+  "description": "Turn a product idea into a PRD ready for the spec: get grilled on the idea first, get a product-only draft (what and why), then critique it into proposed edits. Prototype or critique UIs against the Laws of UX.",
   "author": {
     "name": "James Laidler",
     "email": "james@electrify.video"
@@ -17,7 +17,11 @@
     "interview",
     "critique",
     "review",
-    "planning"
+    "planning",
+    "ux",
+    "laws-of-ux",
+    "ui-critique",
+    "prototype"
   ],
   "dependencies": [
     { "name": "mattpocock-skills", "marketplace": "claude-plugins-official" }

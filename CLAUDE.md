@@ -63,7 +63,7 @@ Three-level nesting, each level a manifest pointing down to the next:
 ```
 
 Three plugins exist today, one phase of product work each:
-- `product-development` — drafts a raw, product-only PRD by grilling the user first (`create-raw-prd`), then critiques it before the spec is written (`critique-prd`). Findings return as proposed edits; missing product decisions become `Q` items rather than critic-invented rules.
+- `product-development` — drafts a raw, product-only PRD by grilling the user first (`create-raw-prd`), then critiques it before the spec is written (`critique-prd`). Findings return as proposed edits; missing product decisions become `Q` items rather than critic-invented rules. Also prototypes or critiques UIs against the Laws of UX (`apply-laws-of-ux`).
 - `product-critique` — reviews planning artifacts before execution (`critique-spec`, then `critique-implementation-plan`). Findings return as concrete proposed edits, not a verdict.
 - `qualitative-product-research` — runs discovery interviews (`practicing-user-interviews`, `live-interview-copilot`).
 
@@ -78,7 +78,7 @@ A plugin can hold a file consumed by several of its skills. `qualitative-product
 
 ### Cross-marketplace dependency
 
-`create-raw-prd` calls `mattpocock-skills:grilling`, so `product-development/.claude-plugin/plugin.json` declares `mattpocock-skills` (from `claude-plugins-official`) under `dependencies`. That only installs because the root `marketplace.json` lists `claude-plugins-official` in `allowCrossMarketplaceDependenciesOn`. Remove the allowlist and the install succeeds *without* the dependency, then the plugin fails to load.
+`create-raw-prd` calls `mattpocock-skills:grilling` and `apply-laws-of-ux` calls `mattpocock-skills:prototype`, so `product-development/.claude-plugin/plugin.json` declares `mattpocock-skills` (from `claude-plugins-official`) under `dependencies`. That only installs because the root `marketplace.json` lists `claude-plugins-official` in `allowCrossMarketplaceDependenciesOn`. Remove the allowlist and the install succeeds *without* the dependency, then the plugin fails to load.
 
 ## Conventions
 
