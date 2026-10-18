@@ -56,6 +56,19 @@ Added to the marketplace. **Experimental.**
 
 ## product-development
 
+### [0.5.0] — 2026-10-18
+
+- `stop-and-think` skill: steps back from a design, spec or plan and checks
+  it against the goal, not against its earlier versions. It sketches the
+  simplest design from scratch, then returns a Keep / Adjust / Rewrite verdict
+  with up to 5 changes. It changes nothing until the user picks.
+- `update-pr` skill: rewrites a GitHub PR's title and description so a reader
+  with no context understands them, starting with a tl;dr in ASD-STE100
+  Simplified Technical English. It keeps every fact from the old body and
+  saves the result with `gh pr edit`. Manual-only: it never triggers on its
+  own.
+- Both skills copied unchanged from personal skills in `~/.claude/skills`.
+
 ### [0.4.0] — 2026-10-18
 
 - `create-prd` skill: one command for the whole PRD flow. It runs
