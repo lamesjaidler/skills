@@ -63,7 +63,7 @@ Three-level nesting, each level a manifest pointing down to the next:
 ```
 
 Two plugins exist today, one area of product work each:
-- `product-development` — drafts a raw, product-only PRD by grilling the user first (`create-raw-prd`), then critiques it before the spec is written (`critique-prd`). Findings return as proposed edits; missing product decisions become `Q` items rather than critic-invented rules. Also prototypes or critiques UIs against the Laws of UX (`apply-laws-of-ux`), and reviews the spec and implementation plan before execution (`critique-spec`, then `critique-implementation-plan`), again as concrete proposed edits, not a verdict.
+- `product-development` — drafts a raw, product-only PRD by grilling the user first (`create-raw-prd`), then critiques it before the spec is written (`critique-prd`). Findings return as proposed edits; missing product decisions become `Q` items rather than critic-invented rules. Also prototypes or critiques UIs against the Laws of UX (`apply-laws-of-ux`), and reviews the spec and implementation plan before execution (`critique-spec`, then `critique-implementation-plan`), again as concrete proposed edits, not a verdict. Steps back to check a design is the best way to reach the goal, returning a Keep / Adjust / Rewrite verdict (`stop-and-think`). Rewrites a PR's title and description for a reader with no context and saves them with `gh pr edit` (`update-pr`, manual-only via `disable-model-invocation`).
 - `qualitative-product-research` — runs discovery interviews (`practicing-user-interviews`, `live-interview-copilot`).
 
 ### Two invariants the validator enforces — breaking either fails CI
