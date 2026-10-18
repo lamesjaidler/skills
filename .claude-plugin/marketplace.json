@@ -10,11 +10,6 @@
   ],
   "plugins": [
     {
-      "name": "product-critique",
-      "source": "./product-critique",
-      "description": "Critique product planning artifacts before execution: a spec/design-doc reviewer and an implementation-plan reviewer. Findings come back as concrete proposed edits."
-    },
-    {
       "name": "qualitative-product-research",
       "source": "./qualitative-product-research",
       "description": "Qualitative user-research skills: rehearse interviews with a coached roleplay, and get live next-question suggestions during a real interview."
@@ -22,7 +17,7 @@
     {
       "name": "product-development",
       "source": "./product-development",
-      "description": "Turn a product idea into a PRD ready for the spec: get grilled on the idea first, get a product-only draft (what and why), then critique it into proposed edits. Prototype or critique UIs against the Laws of UX."
+      "description": "Turn a product idea into a PRD ready for the spec: get grilled on the idea first, get a product-only draft (what and why), then critique it into proposed edits. Prototype or critique UIs against the Laws of UX. Critique the spec and implementation plan before execution."
     }
   ]
 }

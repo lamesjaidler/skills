@@ -19,7 +19,7 @@ Requires `jq`. CI (`.github/workflows/validate.yml`) runs this same script on ev
 Edit `SKILL.md` in place, then load the plugin **live** into a throwaway session — no install, no cache, picked up on each relaunch:
 
 ```bash
-scripts/dev.sh product-critique        # wraps: claude --plugin-dir <plugin-dir>
+scripts/dev.sh product-development     # wraps: claude --plugin-dir <plugin-dir>
 ```
 
 This is the fast loop. Skip the release path below until a change is finished.
@@ -29,14 +29,14 @@ This is the fast loop. Skip the release path below until a change is finished.
 The plugin cache is **version-keyed**: `claude plugin update` re-copies only when `plugin.json`'s version is *higher* than what's installed. An unchanged version no-ops (`✔ already at the latest version`) and the cache stays stale — there is no `--force`. So a release is always a version bump:
 
 ```bash
-scripts/release.sh product-critique 0.0.1   # validates, bumps plugin.json, refreshes the install
+scripts/release.sh product-development 0.3.1   # validates, bumps plugin.json, refreshes the install
 ```
 
 That wraps:
 
 ```bash
 claude plugin marketplace update skills        # re-validates the local marketplace; does NOT re-copy content
-claude plugin update product-critique@skills   # @skills qualifier is required (bare name → "not found"); restart to apply
+claude plugin update product-development@skills   # @skills qualifier is required (bare name → "not found"); restart to apply
 ```
 
 Then add a `CHANGELOG.md` line and commit. `claude plugin tag <plugin>` cuts a `{name}--v{version}` git tag and checks `plugin.json` agrees with the marketplace entry.
@@ -62,9 +62,8 @@ Three-level nesting, each level a manifest pointing down to the next:
 <plugin>/skills/<skill-name>/SKILL.md # the actual skill; YAML frontmatter (name, description) + prose
 ```
 
-Three plugins exist today, one phase of product work each:
-- `product-development` — drafts a raw, product-only PRD by grilling the user first (`create-raw-prd`), then critiques it before the spec is written (`critique-prd`). Findings return as proposed edits; missing product decisions become `Q` items rather than critic-invented rules. Also prototypes or critiques UIs against the Laws of UX (`apply-laws-of-ux`).
-- `product-critique` — reviews planning artifacts before execution (`critique-spec`, then `critique-implementation-plan`). Findings return as concrete proposed edits, not a verdict.
+Two plugins exist today, one area of product work each:
+- `product-development` — drafts a raw, product-only PRD by grilling the user first (`create-raw-prd`), then critiques it before the spec is written (`critique-prd`). Findings return as proposed edits; missing product decisions become `Q` items rather than critic-invented rules. Also prototypes or critiques UIs against the Laws of UX (`apply-laws-of-ux`), and reviews the spec and implementation plan before execution (`critique-spec`, then `critique-implementation-plan`), again as concrete proposed edits, not a verdict.
 - `qualitative-product-research` — runs discovery interviews (`practicing-user-interviews`, `live-interview-copilot`).
 
 ### Two invariants the validator enforces — breaking either fails CI

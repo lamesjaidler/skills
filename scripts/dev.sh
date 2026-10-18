@@ -3,7 +3,7 @@
 # No install, no cache: edits to SKILL.md are picked up on each relaunch.
 # This is the fast iterate loop — use it instead of reinstalling per edit.
 #
-# Usage: scripts/dev.sh <plugin>     e.g. scripts/dev.sh product-critique
+# Usage: scripts/dev.sh <plugin>     e.g. scripts/dev.sh product-development
 set -euo pipefail
 
 root="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
