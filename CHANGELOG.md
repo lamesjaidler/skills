@@ -8,6 +8,12 @@ The format loosely follows [Keep a Changelog](https://keepachangelog.com/).
 
 ## product-critique
 
+### [0.1.1] — 2026-10-17
+
+- `critique-spec` trigger narrowed to specs and design docs. PRDs now go to
+  `critique-prd` in `product-development`, so the two skills no longer compete
+  for the same requests.
+
 ### [0.1.0] — 2026-06-19
 
 `critique-spec` refinements (still **experimental**):
@@ -40,3 +46,38 @@ Added to the marketplace. **Experimental.**
   a real, live interview.
 - Shared `interview-principles.md` at the plugin root, consumed by both skills
   via `${CLAUDE_PLUGIN_ROOT}`.
+
+## product-development
+
+### [0.2.0] — 2026-10-18
+
+- `apply-laws-of-ux` skill: critiques an existing UI (screenshot, code, live URL, or
+  description) against the 30 Laws of UX from lawsofux.com, or prototypes a new
+  one. A critique returns numbered, severity-tagged findings, one law each,
+  with a concrete change. It then asks which findings to act on and whether to
+  prototype first or edit the code directly. Prototypes run through
+  `mattpocock-skills:prototype`: each variant takes a different trade-off
+  between laws and names the law behind each design choice. The laws live in
+  `laws.md` next to the skill, grouped into seven lenses.
+
+### [0.1.0] — 2026-10-17
+
+- `critique-prd` skill: reviews a PRD before the spec is written and returns
+  numbered, severity-tagged findings as proposed PRD edits. It keeps the PRD
+  product-only (build details are removed and parked for the spec) and
+  traceable (unchecked beliefs become `A` items; missing product decisions
+  become `Q` items with a recommended answer). After fixes are applied it sets
+  the status line to `critiqued · <date>`. Resolves `create-raw-prd`'s
+  hand-off pointer.
+
+### [0.0.0] — 2026-10-17
+
+Added to the marketplace. **Experimental.**
+
+- `create-raw-prd` skill: grills you on a product idea (via
+  `mattpocock-skills:grilling`), checks that every PRD section can be written
+  from your answers, then writes a product-only raw PRD to
+  `docs/prd/<slug>.md`, ready for critique.
+- Depends on the `mattpocock-skills` plugin from `claude-plugins-official`. The
+  root `marketplace.json` now allowlists that marketplace for cross-marketplace
+  dependencies.
