@@ -56,6 +56,21 @@ Added to the marketplace. **Experimental.**
 
 ## product-development
 
+### [0.6.0] — 2026-10-18
+
+- `build-from-spec` skill: one command from a spec to an open PR. Fresh
+  subagents write the plan with `superpowers:writing-plans` and critique it
+  against the spec with `critique-implementation-plan`, applying the fixes;
+  you answer only the decisions they need. It then implements the plan with
+  `superpowers:subagent-driven-development`, runs `/simplify` and
+  `/security-review` in fresh subagents that fix what they find, pushes the
+  branch, opens a PR into `main` and rewrites it with `update-pr`. Expects the
+  spec on its own branch or worktree. Manual-only: it never triggers on its
+  own.
+- `update-pr` is no longer manual-only, so `build-from-spec` can call it.
+  You can still run it yourself with `/product-development:update-pr`.
+- New dependency: `superpowers` from `claude-plugins-official`.
+
 ### [0.5.0] — 2026-10-18
 
 - `stop-and-think` skill: steps back from a design, spec or plan and checks
