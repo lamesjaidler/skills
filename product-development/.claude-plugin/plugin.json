@@ -1,7 +1,7 @@
 {
   "name": "product-development",
   "displayName": "Product Development",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Turn a product idea into a PRD ready for the spec: get grilled on the idea first, get a product-only draft (what and why), then critique it into proposed edits. Prototype or critique UIs against the Laws of UX. Critique the spec and implementation plan before execution.",
   "author": {
     "name": "James Laidler",
