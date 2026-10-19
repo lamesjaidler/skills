@@ -1,7 +1,7 @@
 ---
 name: summarise
 description: Use when the user runs /summarise, or asks for a summary of a PRD, spec, design doc or implementation plan — "summarise this spec", "what did the plan decide?", "key decisions in this PRD" — usually before they approve it; or, after an agent has carried out an implementation plan, asks what was actually done — "summarise the work", "what changed from the plan?"; or asks for either in ASD-STE100 or Simplified Technical English.
-argument-hint: "[path to a PRD, spec or plan]"
+argument-hint: "[path to a PRD, spec or plan, or to a plan already carried out]"
 ---
 
 # Summarise
