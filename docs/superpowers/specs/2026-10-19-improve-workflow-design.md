@@ -84,14 +84,15 @@ this skills repo.
 3. **Test and fix each picked problem** with `superpowers:writing-skills`:
    - Turn the moment from the run into a faithful scenario: the skill text, plus the
      situation the agent was in at that point. For a subagent step, that's its exact
-     dispatch prompt from the transcript.
+     dispatch prompt from the transcript. For one turn of a conversation with the user
+     (e.g. a grilling question), that's the conversation up to that turn.
    - Run it in a fresh subagent with the **current** skill. If the agent now does the
      right thing, the problem was a one-off: drop it and tell the user.
    - Otherwise edit the skill, run the same scenario again, and keep the edit only if the
      agent now behaves.
-   - **When no faithful scenario can be built** — the step needed the user's answers
-     (brainstorming, grilling), or the problem only builds up over a long run — don't run a
-     test that would pass for the wrong reason. Write the proposed edit, mark it
+   - **When no faithful scenario can be built** — the problem only builds up over many
+     turns with the user or over a long run — don't run a test that would pass for the
+     wrong reason. Write the proposed edit, mark it
      **untested** with the reason, and let the user decide whether to keep it. The label
      carries into the PR.
 
@@ -162,8 +163,9 @@ Not a finding:
 - The user sees the list of problems first and picks which to pursue.
 - Fixes use `superpowers:writing-skills` (test fresh first, drop if it doesn't fail, then
   fix and re-test).
-- A problem with no faithful test (needed the user, or long-run drift) gets a proposed
-  edit marked **untested**; the user decides whether to keep it.
+- A problem with no faithful test (builds up over many turns or a long run) gets a
+  proposed edit marked **untested**; the user decides whether to keep it. A single turn
+  with the user can be replayed, so it is tested.
 - The user sees the diff and test results before anything is committed.
 - It commits, opens a PR, and stops. The user merges, bumps and releases.
 
@@ -214,6 +216,7 @@ with and without the skill:
    reason → finding.
 4. A build that drifts because the spec was vague → blame goes upstream to `create-spec`.
 5. A finding that doesn't reproduce in a faithful fresh-subagent test → dropped, no edit.
-6. A finding in a step that needed the user (e.g. grilling) → proposed edit marked
-   untested, not dropped.
+6. A finding that builds up over a long run → proposed edit marked untested, not
+   dropped. A finding in one grilling turn → tested by replaying the conversation up to
+   that turn.
 7. A fix that would name the product's details → generalised before it's written.
