@@ -21,7 +21,7 @@ A [Claude Code](https://code.claude.com) plugin marketplace of small agent skill
 Each plugin bundles the skills for one area of product work: `product-development` drafts and critiques the PRD (the *what*), turns it into a finalised spec, prototypes or critiques the UI, reviews the spec and plan (the *how*), steps back to check a design is the right approach, summarises a PRD, spec or plan before you approve it, rewrites PR descriptions, and builds a spec end to end into a PR; `qualitative-product-research` runs the discovery interviews.
 
 > [!WARNING]
-> **Experimental.** `product-development` is `v0.8.1` and `qualitative-product-research` is `v0.1.0`; both are only lightly tested. Expect rough edges and breaking changes. Feedback and issues welcome.
+> **Experimental.** `product-development` is `v0.9.0` and `qualitative-product-research` is `v0.1.0`; both are only lightly tested. Expect rough edges and breaking changes. Feedback and issues welcome.
 
 ## Install
 
