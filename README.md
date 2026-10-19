@@ -5,6 +5,7 @@ A [Claude Code](https://code.claude.com) plugin marketplace of small agent skill
 | Plugin | Skill | Problem it solves | How to use |
 |---|---|---|---|
 | `product-development` | `create-prd` | A PRD critiqued in the session that drafted it gets a biased review: the critic already knows what the author meant, so it misses what the page leaves out. | Type `/create-prd` with your idea. It runs `create-raw-prd` with you, then a fresh subagent that never saw the grilling critiques the draft with `critique-prd`. You then pick which findings to fix and answer any decisions they need, one at a time. Only you can start it; it never fires on its own. |
+| `product-development` | `create-spec` | A spec written in the session that brainstormed it is never checked against the goal or the PRD with fresh eyes, and its UI gets decided in words before anyone has seen it. | Type `/create-spec` with the path to your PRD. You brainstorm the design with `superpowers:brainstorming`. Then fresh subagents check it is the best approach (`stop-and-think`), build three UI prototypes for you to pick from if it has a UI (`apply-laws-of-ux`), and critique it against the PRD (`critique-spec`). Fixes are applied for you; you're only asked when a change undoes one of your decisions or needs a product call. Only you can start it; it never fires on its own. Needs `superpowers`, which installs as a dependency. |
 | `product-development` | `create-raw-prd` | A PRD written straight from a one-line idea is full of guesses and build details, and its gaps only show up later in review or build. | Ask to write a PRD for your idea (or invoke `create-raw-prd`). It grills you on the product in rounds and checks every PRD section can be written from your answers. Then it writes a product-only draft to `docs/prd/<slug>.md`. Needs `mattpocock-skills`, which installs as a dependency. |
 | `product-development` | `critique-prd` | A PRD reaches the spec with gaps the spec writer has to fill by guessing, beliefs stated as facts, and build choices that tie the spec's hands. | After a PRD is drafted (by `create-raw-prd` or by hand), ask for a review (or invoke `critique-prd`). You get numbered, severity-tagged findings as proposed PRD edits; any product decision it needs comes back as an open question for you, not a rule it made up. You choose which to apply. |
 | `product-development` | `apply-laws-of-ux` | UI reviews come back as vague opinion, and new screens get designed without the known rules of how people perceive, decide, and remember. | Ask for a Laws of UX critique of a screenshot, page, URL, or flow, or for a prototype of a new UI (or invoke `apply-laws-of-ux`). A critique gives numbered, severity-tagged findings, each tied to one law with a concrete change; you pick which to act on and whether to prototype first or edit the code. A prototype gives a few switchable variants, each taking a different trade-off between laws. Needs `mattpocock-skills`, which installs as a dependency. |
@@ -15,10 +16,10 @@ A [Claude Code](https://code.claude.com) plugin marketplace of small agent skill
 | `qualitative-product-research` | `practicing-user-interviews` | You're about to interview real users, but untrained questions lean on opinions and hypotheticals that produce flattering, useless answers — and there's nowhere safe to practice. | Run it in your app's repo and say "be a user I can interview". It plays a persona grounded in the repo and coaches each question toward specific past behaviour, live. |
 | `qualitative-product-research` | `live-interview-copilot` | Mid-interview, under time pressure, it's hard to pick the best next question — easy to ask double-barrelled or leading ones and waste the session. | Start it before a live call, give it the research goal, then paste each reply. You get one short, speakable next question back per turn. |
 
-Each plugin bundles the skills for one area of product work: `product-development` drafts and critiques the PRD (the *what*), prototypes or critiques the UI, reviews the spec and plan (the *how*), steps back to check a design is the right approach, and rewrites PR descriptions; `qualitative-product-research` runs the discovery interviews.
+Each plugin bundles the skills for one area of product work: `product-development` drafts and critiques the PRD (the *what*), turns it into a finalised spec, prototypes or critiques the UI, reviews the spec and plan (the *how*), steps back to check a design is the right approach, and rewrites PR descriptions; `qualitative-product-research` runs the discovery interviews.
 
 > [!WARNING]
-> **Experimental.** `product-development` is `v0.5.0` and `qualitative-product-research` is `v0.1.0`; both are only lightly tested. Expect rough edges and breaking changes. Feedback and issues welcome.
+> **Experimental.** `product-development` is `v0.6.0` and `qualitative-product-research` is `v0.1.0`; both are only lightly tested. Expect rough edges and breaking changes. Feedback and issues welcome.
 
 ## Install
 
@@ -69,10 +70,11 @@ skills/                                  # repo root = the marketplace
 │   └── skills/
 │       ├── practicing-user-interviews/SKILL.md
 │       └── live-interview-copilot/SKILL.md
-├── product-development/                 # plugin (8 skills; depends on mattpocock-skills)
+├── product-development/                 # plugin (9 skills; depends on mattpocock-skills, superpowers)
 │   ├── .claude-plugin/plugin.json
 │   └── skills/
 │       ├── create-prd/SKILL.md          # runs create-raw-prd, then critique-prd in a fresh subagent
+│       ├── create-spec/SKILL.md         # brainstorms a spec from a PRD, then checks it in fresh subagents
 │       ├── create-raw-prd/SKILL.md
 │       ├── critique-prd/SKILL.md
 │       ├── critique-spec/SKILL.md
