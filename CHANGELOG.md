@@ -56,6 +56,18 @@ Added to the marketplace. **Experimental.**
 
 ## product-development
 
+### [0.7.0] — 2026-10-19
+
+- `summarise` skill: summarises a PRD, spec or implementation plan for the
+  person about to approve it. The reply lists what the doc decided and what it
+  leaves open for them, each item with a pointer to its section or ID. It is
+  written in ASD-STE100 Simplified Technical English (the writing rules in our
+  own words, no dictionary). It is not a review: it ends by pointing to the
+  matching `critique-*` skill. After an agent has carried out a plan, it
+  summarises the work instead, from the branch's commits and diff: what was
+  done, what changed from the plan, what was not done, and what still needs
+  the user. It runs only read-only git commands.
+
 ### [0.6.0] — 2026-10-18
 
 - `build-from-spec` skill: one command from a spec to an open PR. Fresh
