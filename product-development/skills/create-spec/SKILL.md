@@ -1,6 +1,7 @@
 ---
 name: create-spec
 description: Turn a PRD into a finalised spec. You brainstorm the design, then fresh subagents check it's the best approach, prototype any UI for you to pick from, and critique it against the PRD, applying every fix that doesn't need your decision.
+argument-hint: "<path to PRD>"
 disable-model-invocation: true
 ---
 
