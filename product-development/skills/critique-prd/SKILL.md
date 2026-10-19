@@ -35,6 +35,7 @@ Every proposed edit keeps the PRD traceable:
 
 - **Text from the PRD or the owner.** Most edits rearrange what is already there: fix a contradiction, delete a leak, move a claim to an `A` item, repoint a reference.
 - **A missing product decision becomes a `Q`.** When the fix needs a decision the PRD doesn't contain, the edit adds `Qn. <decision>, waiting on <owner>.` Your recommended answer goes in the finding, for the owner to pick in the fix flow.
+- **One edit per finding.** Each finding proposes exactly one edit. When the fix could go more than one way (for example, cite a source the owner may have, or move the claim to an `A` item), that one edit is a `Q` naming the ways, and your recommended way goes in the finding.
 - **A recorded decision is settled**, and so is a recorded deferral (a `Q` the owner chose to leave open). Report its consequences as a RISK; the edit records the consequence and keeps the decision. When an unsourced line contradicts it, the edit removes that line.
 - **Build details leave the PRD.** The edit deletes them and they go on the Parked for the spec list.
 
@@ -51,8 +52,8 @@ Example findings:
 When the PRD owner can respond (interactive session), the fix flow is strictly sequenced — one step per turn, never combined:
 
 1. **Findings, then scope — nothing else.** The findings message ends with exactly one question: fix all findings, a subset (by number), or none. Ask no clarifying questions in this message, and never edit the PRD before the owner chooses scope — it is their document.
-2. **Owner decisions, one at a time.** After scope is confirmed, ask the decision behind each in-scope `Q` edit **one per turn**: name the finding, offer 2-4 concrete options with your **recommended option first and marked "(Recommended)"**, and wait for the answer. Use the AskUserQuestion tool when available; otherwise one prose question per turn. The owner's answer replaces the `Q` with the decided text; "not now" keeps the `Q`.
-3. **Apply.** After the last answer, apply exactly the selected edits with the Edit tool (preserve the PRD's template and numbering), then set the status line to `Status: critiqued · <YYYY-MM-DD>`. Report per finding what changed (`path:line`), and flag any new gap the applied edits expose. If the owner chose none, leave the PRD and its status line untouched.
+2. **Owner decisions, one at a time.** After scope is confirmed, ask the decision behind each in-scope `Q` edit, and behind each edit that offers more than one way, **one per turn**: name the finding, offer 2-4 concrete options with your **recommended option first and marked "(Recommended)"**, and wait for the answer. Each option holds the exact text it would put in the PRD, in its description or `preview`, so the question itself shows everything the owner approves. Nothing reaches the PRD from text outside the question. Use the AskUserQuestion tool when available; otherwise one prose question per turn. The owner's answer replaces the `Q` with the decided text; "not now" keeps the `Q`.
+3. **Apply.** Before applying, check each selected edit: one that still offers more than one way goes back to step 2 as an owner decision, even when one way looks like plain fact. After the last answer, apply exactly the selected edits with the Edit tool (preserve the PRD's template and numbering), then set the status line to `Status: critiqued · <YYYY-MM-DD>`. Write each new gap the applied edits expose into the PRD as an `A` item (a belief nobody has checked) or a `Q` waiting on the owner. Report per finding what changed (`path:line`), including each new gap's item. If the owner chose none, leave the PRD and its status line untouched.
 
 If the request pre-authorizes fixes ("critique and fix it"), skip the scope question; still ask the owner decisions one at a time before applying.
 
@@ -63,7 +64,7 @@ When no owner is reachable (you are a subagent returning a report), return findi
 | Category | Ask |
 |---|---|
 | Build details | Does any section, item or sentence say how it gets built (a named tool, tech stack, data store or integration)? Each one is a finding; its edit deletes it. |
-| Requirements | Does every `R` serve a problem in the Problem section? An `R` with no problem behind it is a finding; its edit adds a `Q` asking which problem it solves, or moves it to Non-goals. |
+| Requirements | Does every `R` serve a problem in the Problem section? An `R` with no problem behind it is a finding; its edit adds a `Q` asking which problem it solves, with "move it to Non-goals" as one answer. |
 | Users | Does every `R` name a user type from the Users section? "As a user" leaves the spec writer to invent who. |
 | Non-goals | Does each non-goal carry the owner's reason? "No reason given" is a finding: without the reason, nobody can tell later whether the line can move. |
 | Open questions | Does every `Q` name who it is waiting on? |
