@@ -56,6 +56,13 @@ Added to the marketplace. **Experimental.**
 
 ## product-development
 
+### [0.9.0] — 2026-10-19
+
+- `create-prd` now asks first whether to make a new worktree and branch
+  (`prd/<slug>`) for the project, and drafts the PRD there if you say yes.
+  It ends by summarising the PRD with `summarise`, even when you chose no
+  fixes, and points you to `/create-spec` next.
+
 ### [0.8.1] — 2026-10-19
 
 - `summarise`: the argument hint now mentions a plan already carried out,
