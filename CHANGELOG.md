@@ -56,6 +56,20 @@ Added to the marketplace. **Experimental.**
 
 ## product-development
 
+### [0.8.0] — 2026-10-19
+
+- `create-spec` skill: one command from a PRD to a finalised spec. You
+  brainstorm the spec with `superpowers:brainstorming`, which starts from the
+  PRD and asks only how it gets built. Then fresh subagents, which never saw
+  the brainstorming, run `stop-and-think` on it, build three UI prototypes
+  with `apply-laws-of-ux` for you to pick or mix (only if the spec has a UI),
+  and run `critique-spec` against the PRD. Changes are applied for you; you're
+  asked only when one undoes a decision you made while brainstorming or needs
+  a product call. The chosen prototype is linked from the spec. The PRD is
+  never edited: decisions that contradict it are listed in the hand-off for
+  you to update. The hand-off points you to `/build-from-spec` next. You have
+  to start it yourself (`/create-spec`); it never fires on its own.
+
 ### [0.7.0] — 2026-10-19
 
 - `summarise` skill: summarises a PRD, spec or implementation plan for the
