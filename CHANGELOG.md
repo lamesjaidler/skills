@@ -56,11 +56,29 @@ Added to the marketplace. **Experimental.**
 
 ## product-development
 
-### [0.9.0] — 2026-10-19
+### [0.11.0] — 2026-10-19
 
 - `build-from-spec`: after it opens the PR, the run now ends with
   `summarise` on the carried-out plan. You get what was done, what changed
   from the plan, what was not done, and what still needs you, in the chat.
+
+### [0.10.0] — 2026-10-19
+
+- `create-spec`: the hand-off now starts with a summary of the finished spec.
+  A fresh subagent, which never saw the brainstorming, runs `summarise` on the
+  spec file, so you see its decisions and open items before you approve it.
+- `summarise`: a summary of a PRD, spec or plan no longer ends by pointing to
+  a `critique-*` skill. A summary of carried-out work still ends by pointing
+  to `mattpocock-skills:code-review`.
+- `create-prd`: its summary step now adds the `/create-spec` line, in place
+  of replacing the `critique-prd` line that `summarise` no longer writes.
+
+### [0.9.0] — 2026-10-19
+
+- `create-prd` now asks first whether to make a new worktree and branch
+  (`prd/<slug>`) for the project, and drafts the PRD there if you say yes.
+  It ends by summarising the PRD with `summarise`, even when you chose no
+  fixes, and points you to `/create-spec` next.
 
 ### [0.8.1] — 2026-10-19
 

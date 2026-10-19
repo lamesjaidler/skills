@@ -50,8 +50,6 @@ An implementation summary has three sections in place of **Decisions**:
 
 **Needs you**
 1. <one instruction, at most 20 words> (<pointer>)
-
-To check the doc for gaps, run `<critique-prd | critique-spec | critique-implementation-plan>`.
 ```
 
 For an implementation:
@@ -65,7 +63,6 @@ Rules for all types:
 - Number the items. Keep the doc's order.
 - A **pointer** is the doc's own ID (`R4`, `Q2`, `Task 8`). If there is none, use the section number (`§6`). If there is none, use the heading. For an implementation, add the commit: `(Task 8, a3b183a)`.
 - If a section has no items, write "Nothing." under it.
-- The critique or review line is the last line of the reply.
 
 Example, from a spec for a CSV export:
 
