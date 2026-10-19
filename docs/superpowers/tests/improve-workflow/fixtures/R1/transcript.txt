@@ -51,15 +51,18 @@ Step 4: simplify.
 [tool_result] https://github.com/acme/jotter/pull/12
 [tool_use Skill] {"skill":"product-development:update-pr","args":"https://github.com/acme/jotter/pull/12"}
 [tool_result] Launching skill: product-development:update-pr
-[tool_use Bash] {"command":"gh pr view https://github.com/acme/jotter/pull/12 --json title,body,files"}
-[tool_result] {"title":"Note tags","body":"Spec: docs/specs/tags.md …","files":[…]}
-[tool_use Bash] {"command":"gh pr diff https://github.com/acme/jotter/pull/12"}
-[tool_result] diff --git a/jotter/notes.py b/jotter/notes.py …
-[tool_use Bash] {"command":"gh pr edit https://github.com/acme/jotter/pull/12 --title 'Tag notes and list them by tag' --body-file /tmp/jotter-tags-pr-v2.md"}
+[tool_use Bash] {"command":"gh pr view https://github.com/acme/jotter/pull/12 --json number,url,title,body,state,baseRefName,headRefName,commits,files"}
+[tool_result] {"number":12,"url":"https://github.com/acme/jotter/pull/12","title":"Note tags","body":"Spec: docs/specs/tags.md …","state":"OPEN",…}
+[tool_use Bash] {"command":"gh pr diff https://github.com/acme/jotter/pull/12 > /tmp/jotter-pr12.diff && wc -l < /tmp/jotter-pr12.diff"}
+[tool_result] 64
+[tool_use Bash] {"command":"cat CONTEXT.md 2>/dev/null || echo 'no CONTEXT.md'"}
+[tool_result] no CONTEXT.md
+[tool_use Write] {"file_path":"/tmp/jotter-tags-pr-v2.md","content":"## tl;dr\nYou can tag notes and list only the notes with a tag. …"}
+[tool_use Bash] {"command":"gh pr edit https://github.com/acme/jotter/pull/12 --title 'Tags: tag notes and list them by tag' --body-file /tmp/jotter-tags-pr-v2.md"}
 [tool_result] https://github.com/acme/jotter/pull/12
 [tool_use Bash] {"command":"gh pr view https://github.com/acme/jotter/pull/12 --json title,url"}
-[tool_result] {"title":"Tag notes and list them by tag","url":"https://github.com/acme/jotter/pull/12"}
-[assistant] PR: https://github.com/acme/jotter/pull/12 — "Tag notes and list them by tag"
+[tool_result] {"title":"Tags: tag notes and list them by tag","url":"https://github.com/acme/jotter/pull/12"}
+[assistant] PR: https://github.com/acme/jotter/pull/12 — "Tags: tag notes and list them by tag"
 
 Rulings I made:
 - Tags are stored lowercased — spec §Behaviour says tags are case-insensitive; lowercasing on save is the simplest way to meet it.
