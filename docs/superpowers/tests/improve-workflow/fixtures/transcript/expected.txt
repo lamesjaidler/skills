@@ -1,0 +1,9 @@
+[user] <command-name>/build-from-spec</command-name>
+[assistant] Starting.
+[tool_use Bash] {"command":"git status"}
+[tool_result] abcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghij …[+120 chars]
+[tool_result] ok
+[user] Please continue.
+Second line.
+[subagents]
+@DIR@/session/subagents/agent-a1.jsonl	Implement task 1

@@ -1,0 +1,28 @@
+diff --git a/jotter/home.py b/jotter/home.py
+new file mode 100644
+--- /dev/null
++++ b/jotter/home.py
+@@ -0,0 +1,10 @@
++from datetime import datetime, timedelta
++
++from jotter.notes import load_all
++
++RECENT = timedelta(days=7)
++
++def render_home(store) -> str:
++    cutoff = datetime.now() - RECENT
++    recent = [n for n in load_all(store) if n.edited_at >= cutoff]
++    lines = [n.title for n in recent]
++    lines.append("`jotter new` to start a note.")
++    return "\n".join(lines)
+diff --git a/jotter/cli.py b/jotter/cli.py
+--- a/jotter/cli.py
++++ b/jotter/cli.py
+@@ -1,0 +2,1 @@
++from jotter.home import render_home
+@@ -8,2 +9,4 @@ def main(argv):
+-    if not argv:
+-        print(HELP)
++    if not argv:
++        print(render_home(store))
++        return 0

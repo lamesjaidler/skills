@@ -1,0 +1,41 @@
+diff --git a/jotter/notes.py b/jotter/notes.py
+--- a/jotter/notes.py
++++ b/jotter/notes.py
+@@ -12,6 +12,7 @@ class Note:
+     title: str
+     body: str
+     edited_at: datetime
++    tags: list[str] = field(default_factory=list)
+
+ def load(record: dict) -> Note:
+-    return Note(**record)
++    return Note(**{"tags": [], **record})
++
++def add_tag(note: Note, tag: str) -> None:
++    tag = tag.lower()
++    if tag not in note.tags:
++        note.tags.append(tag)
+diff --git a/jotter/cli.py b/jotter/cli.py
+--- a/jotter/cli.py
++++ b/jotter/cli.py
+@@ -20,8 +20,17 @@ def main(argv):
++    if cmd == "tag":
++        note = store.get(args[0])
++        add_tag(note, args[1])
++        store.save(note)
++        return 0
+     if cmd == "list":
+-        for n in list_notes(store):
++        tag = opt(args, "--tag")
++        for n in list_notes(store):
++            if tag and tag.lower() not in n.tags:
++                continue
+             print(n.title)
+diff --git a/tests/test_tags.py b/tests/test_tags.py
+new file mode 100644
+--- /dev/null
++++ b/tests/test_tags.py
+@@ -0,0 +1,18 @@
++def test_tagging_twice_keeps_one_tag(): ...
++def test_tag_filter_is_case_insensitive(): ...
++def test_old_notes_without_tags_load(): ...

@@ -2,7 +2,7 @@
   "name": "product-development",
   "displayName": "Product Development",
   "version": "0.11.0",
-  "description": "Turn a product idea into a PRD ready for the spec: get grilled on the idea first, get a product-only draft (what and why), then critique it into proposed edits. Turn the PRD into a finalised spec: brainstorm it, check it's the best approach, pick the UI from prototypes, critique it against the PRD, and summarise it. Prototype or critique UIs against the Laws of UX. Critique the spec and implementation plan before execution. Step back to check a design is the best way to reach the goal. Rewrite a PR's title and description for a reader with no context. Build a spec end to end: plan, critique, implement, simplify, security-review, PR, summary. Summarise a PRD, spec or plan into its decisions and open items, or the work done from a plan, in Simplified Technical English.",
+  "description": "Turn a product idea into a PRD ready for the spec: get grilled on the idea first, get a product-only draft (what and why), then critique it into proposed edits. Turn the PRD into a finalised spec: brainstorm it, check it's the best approach, pick the UI from prototypes, critique it against the PRD, and summarise it. Prototype or critique UIs against the Laws of UX. Critique the spec and implementation plan before execution. Step back to check a design is the best way to reach the goal. Rewrite a PR's title and description for a reader with no context. Build a spec end to end: plan, critique, implement, simplify, security-review, PR, summary. Summarise a PRD, spec or plan into its decisions and open items, or the work done from a plan, in Simplified Technical English. Review a finished workflow run and fix the skill that let it go wrong, test-first, as a PR.",
   "author": {
     "name": "James Laidler",
     "email": "james@electrify.video"
@@ -31,7 +31,10 @@
     "build-pipeline",
     "subagent-driven-development",
     "summary",
-    "simplified-technical-english"
+    "simplified-technical-english",
+    "continuous-improvement",
+    "skill-improvement",
+    "retrospective"
   ],
   "dependencies": [
     { "name": "mattpocock-skills", "marketplace": "claude-plugins-official" },

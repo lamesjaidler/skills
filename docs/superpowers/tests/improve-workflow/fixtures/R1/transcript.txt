@@ -1,0 +1,69 @@
+[user] <command-name>/build-from-spec</command-name>
+<command-args>docs/specs/tags.md</command-args>
+[tool_use Bash] {"command":"git branch --show-current"}
+[tool_result] feat/tags
+[tool_use Bash] {"command":"git merge-base main HEAD"}
+[tool_result] 3f1c2aa
+[assistant] On feat/tags, BASE=3f1c2aa. Step 1: dispatching the plan subagent.
+[tool_use Agent] {"description":"Write plan","prompt":"Run the `superpowers:writing-plans` skill on the spec at `/repo/docs/specs/tags.md`. The execution method is already chosen: subagent-driven. The plan goes straight to an automated critique, so skip the Execution Handoff and ask nothing. Reply with only the plan's absolute path."}
+[tool_result] /repo/docs/plans/tags.md
+[assistant] Step 2: plan critique.
+[tool_use Agent] {"description":"Critique plan","prompt":"Run the `product-development:critique-implementation-plan` skill on the plan at `/repo/docs/plans/tags.md`, and check it against the spec at `/repo/docs/specs/tags.md`. Fixes are pre-authorized: apply every fix that needs no owner decision, and do not apply the others. Reply with: (1) one line per applied fix, with its `path:line`; (2) each owner decision as a question …"}
+[tool_result] (1) Added the old-notes-load test from spec §Tests to Task 1 — docs/plans/tags.md:41. (2) No owner decisions.
+[tool_use Bash] {"command":"git add docs/plans/tags.md && git commit -m \"Add plan for note tags\""}
+[tool_result] [feat/tags 8a2d1e0] Add plan for note tags
+[assistant] Step 3: implementing with subagent-driven-development.
+[tool_use Skill] {"skill":"superpowers:subagent-driven-development"}
+[tool_result] Launching skill: superpowers:subagent-driven-development
+[tool_use Agent] {"description":"Implement task 1: tag model","prompt":"You are implementing Task 1 of /repo/docs/plans/tags.md …"}
+[subagent: Implement task 1: tag model]
+[user] You are implementing Task 1 of /repo/docs/plans/tags.md …
+[assistant] Writing failing tests for add_tag and loading old notes.
+[tool_use Bash] {"command":"pytest tests/test_tags.py -q"}
+[tool_result] 3 failed
+[assistant] Implemented Note.tags with default [], add_tag lowercases and skips duplicates.
+[tool_use Bash] {"command":"pytest -q"}
+[tool_result] 14 passed
+[assistant] Task 1 done. Tags are lowercased on save to make them case-insensitive (spec §Behaviour). Commit 1b9c0f3.
+[end subagent]
+[tool_result] Task 1 done. Tags are lowercased on save to make them case-insensitive (spec §Behaviour). Commit 1b9c0f3.
+[tool_use Agent] {"description":"Review task 1","prompt":"Review Task 1 for spec compliance, then code quality …"}
+[tool_result] ✅ Spec compliant: tags field, add_tag no-op on duplicate, old notes load. Code quality: approved.
+[tool_use Agent] {"description":"Implement task 2: tag CLI","prompt":"You are implementing Task 2 of /repo/docs/plans/tags.md …"}
+[tool_result] Task 2 done. `jotter tag` and `jotter list --tag` added; filter compares lowercased tags. 16 passed. Commit 7e44ab2.
+[tool_use Agent] {"description":"Review task 2","prompt":"Review Task 2 for spec compliance, then code quality …"}
+[tool_result] ✅ Spec compliant: tag command, --tag filter, case-insensitive match. Code quality: approved.
+[assistant] All tasks done. Rulings I made:
+- Tags are stored lowercased — spec §Behaviour says tags are case-insensitive; lowercasing on save is the simplest way to meet it and keeps `--tag` a plain comparison.
+Step 4: simplify.
+[tool_use Agent] {"description":"Simplify","prompt":"In `/repo`, run the `simplify` skill with no argument. The changes to review are `3f1c2aa..HEAD`. …"}
+[tool_result] No changes worth making. Tests: 16 passed.
+[assistant] Step 5: security review.
+[tool_use Agent] {"description":"Security review","prompt":"In `/repo`, run the `security-review` skill on this branch. …"}
+[tool_result] No findings. Tests: 16 passed.
+[assistant] Step 6: opening the PR.
+[tool_use Bash] {"command":"git status --porcelain"}
+[tool_result]
+[tool_use Bash] {"command":"git push -u origin HEAD"}
+[tool_result] branch 'feat/tags' set up to track 'origin/feat/tags'.
+[tool_use Write] {"file_path":"/tmp/jotter-tags-pr.md","content":"Spec: docs/specs/tags.md\nPlan: docs/plans/tags.md\n\nRulings I made:\n- Tags are stored lowercased — spec §Behaviour …\n\nSecurity: no findings."}
+[tool_use Bash] {"command":"gh pr create --base main --title 'Note tags' --body-file /tmp/jotter-tags-pr.md"}
+[tool_result] https://github.com/acme/jotter/pull/12
+[tool_use Skill] {"skill":"product-development:update-pr","args":"https://github.com/acme/jotter/pull/12"}
+[tool_result] Launching skill: product-development:update-pr
+[tool_use Bash] {"command":"gh pr view https://github.com/acme/jotter/pull/12 --json number,url,title,body,state,baseRefName,headRefName,commits,files"}
+[tool_result] {"number":12,"url":"https://github.com/acme/jotter/pull/12","title":"Note tags","body":"Spec: docs/specs/tags.md …","state":"OPEN",…}
+[tool_use Bash] {"command":"gh pr diff https://github.com/acme/jotter/pull/12 > /tmp/jotter-pr12.diff && wc -l < /tmp/jotter-pr12.diff"}
+[tool_result] 64
+[tool_use Bash] {"command":"cat CONTEXT.md 2>/dev/null || echo 'no CONTEXT.md'"}
+[tool_result] no CONTEXT.md
+[tool_use Write] {"file_path":"/tmp/jotter-tags-pr-v2.md","content":"## tl;dr\nYou can tag notes and list only the notes with a tag. …"}
+[tool_use Bash] {"command":"gh pr edit https://github.com/acme/jotter/pull/12 --title 'Tags: tag notes and list them by tag' --body-file /tmp/jotter-tags-pr-v2.md"}
+[tool_result] https://github.com/acme/jotter/pull/12
+[tool_use Bash] {"command":"gh pr view https://github.com/acme/jotter/pull/12 --json title,url"}
+[tool_result] {"title":"Tags: tag notes and list them by tag","url":"https://github.com/acme/jotter/pull/12"}
+[assistant] PR: https://github.com/acme/jotter/pull/12 — "Tags: tag notes and list them by tag"
+
+Rulings I made:
+- Tags are stored lowercased — spec §Behaviour says tags are case-insensitive; lowercasing on save is the simplest way to meet it.
+[user] <command-name>/improve-workflow</command-name>
