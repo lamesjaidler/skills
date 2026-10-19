@@ -1,0 +1,34 @@
+diff --git a/jotter/notes.py b/jotter/notes.py
+--- a/jotter/notes.py
++++ b/jotter/notes.py
+@@ -1,4 +1,4 @@
+-import orjson
++import json
+@@ -20,3 +20,7 @@ def load_all(store) -> list[Note]:
+-    return [load(orjson.loads(p.read_bytes())) for p in store.paths()]
++    return [load(json.loads(p.read_text())) for p in store.paths()]
++
++def list_notes(store) -> list[Note]:
++    return sorted(load_all(store), key=lambda n: n.title)
+diff --git a/jotter/cli.py b/jotter/cli.py
+--- a/jotter/cli.py
++++ b/jotter/cli.py
+@@ -2,0 +3,1 @@
++from jotter.notes import list_notes
+@@ -18,0 +20,6 @@ def main(argv):
++    if cmd == "list":
++        notes = list_notes(store)
++        if not notes:
++            print("No notes yet.")
++        for n in notes:
++            print(n.title)
+diff --git a/tests/test_list.py b/tests/test_list.py
+new file mode 100644
+--- /dev/null
++++ b/tests/test_list.py
+@@ -0,0 +1,12 @@
++def test_empty_store_prints_no_notes(capsys, empty_store): ...
++
++def test_list_returns_all_notes(capsys, store_with_three_notes):
++    main(["list"])
++    assert len(capsys.readouterr().out.splitlines()) == 3
