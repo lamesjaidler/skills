@@ -67,8 +67,8 @@ Added to the marketplace. **Experimental.**
   asked only when one undoes a decision you made while brainstorming or needs
   a product call. The chosen prototype is linked from the spec. The PRD is
   never edited: decisions that contradict it are listed in the hand-off for
-  you to update. You have to start it yourself (`/create-spec`); it never
-  fires on its own.
+  you to update. The hand-off points you to `/build-from-spec` next. You have
+  to start it yourself (`/create-spec`); it never fires on its own.
 
 ### [0.7.0] — 2026-10-19
 

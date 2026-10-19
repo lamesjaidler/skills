@@ -15,7 +15,7 @@ The PRD is the file the user named. If they named none, ask for its path. The PR
 1. **Draft the raw spec.** Call the Skill tool with `superpowers:brainstorming`. Before its first message, read the PRD and the code the feature builds on. Then run it with the PRD as its starting point:
    - The PRD settles what to build and why. Every question, the first one included, is about how it gets built: which choices (platform, stack, existing code to build on) the user wants to make and which they hand to you, the constraints, and each PRD gap that changes the design (an open `Q`, a requirement two designs would read differently).
    - The result is always a written design document.
-   - When the spec is written and brainstorming's builder check is back, go straight on to step 2 in the same turn. The user approves the spec at step 5, so writing-plans waits until then.
+   - When the spec is written and brainstorming's builder check is back, go straight on to step 2 in the same turn. The user approves the spec at step 5, and `/build-from-spec` plans it after that.
 
 2. **Check the approach.** Dispatch one `general-purpose` subagent with exactly this prompt, absolute paths filled in:
 
@@ -45,4 +45,4 @@ The PRD is the file the user named. If they named none, ask for its path. The PR
    > Critique: <n> fixes applied, <n> decided by you.
    > Open questions: <list, or "none">.
    > PRD lines to update: <each line a decision contradicts, with the decision, or "none">.
-   > Next: read and approve the spec, then plan it with `superpowers:writing-plans`.
+   > Next: read and approve the spec, then build it with `/build-from-spec <spec>` from its own branch or worktree, not `main`.
