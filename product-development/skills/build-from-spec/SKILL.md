@@ -7,7 +7,7 @@ disable-model-invocation: true
 
 # Build from spec
 
-Build the spec at `$ARGUMENTS` and open a PR into `main`. Each review step runs in a fresh subagent, so it judges the work from the files alone. You run the implementation yourself, as its controller.
+Build the spec at `$ARGUMENTS`, open a PR into `main`, and summarise the work for the user. Each review step runs in a fresh subagent, so it judges the work from the files alone. You run the implementation yourself, as its controller.
 
 The user typed `/build-from-spec`, so they want the whole run, including the push and the PR. Do not check in between steps. Stop only for the owner-decision questions in steps 2 and 5, and for the stops that `superpowers:subagent-driven-development` names.
 
@@ -51,6 +51,8 @@ Put absolute paths in every dispatch prompt.
    3. `gh pr create --base main --title '<feature>' --body-file <file>`. The body lists the spec path, the plan path, the "Rulings I made" list, and each security finding with its fix.
    4. Call the Skill tool with `product-development:update-pr` and the PR URL. It rewrites the title and body.
    5. Give the user the PR URL and the "Rulings I made" list.
+
+7. **Summarise the work.** Call the Skill tool with `product-development:summarise` and the plan path. The plan is now carried out, so it summarises the work from the branch's commits. Its reply is the last message of the run.
 
 ## Common mistakes
 

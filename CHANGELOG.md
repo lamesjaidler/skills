@@ -56,6 +56,12 @@ Added to the marketplace. **Experimental.**
 
 ## product-development
 
+### [0.11.0] — 2026-10-19
+
+- `build-from-spec`: after it opens the PR, the run now ends with
+  `summarise` on the carried-out plan. You get what was done, what changed
+  from the plan, what was not done, and what still needs you, in the chat.
+
 ### [0.10.0] — 2026-10-19
 
 - `create-spec`: the hand-off now starts with a summary of the finished spec.
