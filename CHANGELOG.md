@@ -56,6 +56,11 @@ Added to the marketplace. **Experimental.**
 
 ## product-development
 
+### [0.8.1] — 2026-10-19
+
+- `summarise`: the argument hint now mentions a plan already carried out,
+  not only a PRD, spec or plan.
+
 ### [0.8.0] — 2026-10-19
 
 - `create-spec` skill: one command from a PRD to a finalised spec. You
