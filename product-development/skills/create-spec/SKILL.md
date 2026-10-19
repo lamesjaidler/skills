@@ -1,13 +1,13 @@
 ---
 name: create-spec
-description: Turn a PRD into a finalised spec. You brainstorm the design, then fresh subagents check it's the best approach, prototype any UI for you to pick from, and critique it against the PRD, applying every fix that doesn't need your decision.
+description: Turn a PRD into a finalised spec. You brainstorm the design, then fresh subagents check it's the best approach, prototype any UI for you to pick from, critique it against the PRD (applying every fix that doesn't need your decision), and summarise it for you to approve.
 argument-hint: "<path to PRD>"
 disable-model-invocation: true
 ---
 
 # Create a spec
 
-Runs `superpowers:brainstorming`, `stop-and-think`, `apply-laws-of-ux` and `critique-spec` as one flow, from a PRD to a finalised spec. You draft the spec with the user in this thread. Then subagents check it with **fresh eyes**: they never saw the brainstorming, so they work from the files alone.
+Runs `superpowers:brainstorming`, `stop-and-think`, `apply-laws-of-ux`, `critique-spec` and `summarise` as one flow, from a PRD to a finalised spec. You draft the spec with the user in this thread. Then subagents check it with **fresh eyes**: they never saw the brainstorming, so they work from the files alone.
 
 The PRD is the file the user named. If they named none, ask for its path. The PRD is read-only: every change this flow makes goes in the spec. When a decision contradicts a PRD line, the spec records the decision and the hand-off lists the line.
 
@@ -16,7 +16,7 @@ The PRD is the file the user named. If they named none, ask for its path. The PR
 1. **Draft the raw spec.** Call the Skill tool with `superpowers:brainstorming`. Before its first message, read the PRD and the code the feature builds on. Then run it with the PRD as its starting point:
    - The PRD settles what to build and why. Every question, the first one included, is about how it gets built: which choices (platform, stack, existing code to build on) the user wants to make and which they hand to you, the constraints, and each PRD gap that changes the design (an open `Q`, a requirement two designs would read differently).
    - The result is always a written design document.
-   - When the spec is written and brainstorming's builder check is back, go straight on to step 2 in the same turn. The user approves the spec at step 5, and `/build-from-spec` plans it after that.
+   - When the spec is written and brainstorming's builder check is back, go straight on to step 2 in the same turn. The user approves the spec at step 6, and `/build-from-spec` plans it after that.
 
 2. **Check the approach.** Dispatch one `general-purpose` subagent with exactly this prompt, absolute paths filled in:
 
@@ -38,7 +38,11 @@ The PRD is the file the user named. If they named none, ask for its path. The PR
 
    Every **Needs owner** finding is settled by the user: by what they said while brainstorming, or by asking now, one per turn with AskUserQuestion, recommended option first. Apply each answer. A "not now" goes in the spec's open questions.
 
-5. **Hand off** with exactly this message:
+5. **Summarise.** Dispatch one `general-purpose` subagent with exactly this prompt:
+
+   > Run the `product-development:summarise` skill on the spec at `<spec>`. You are a subagent and the user can't be reached: return the skill's reply verbatim and edit no files.
+
+6. **Hand off.** Your last message is the summary's reply, verbatim, then exactly this message:
 
    > Spec finalised: `<spec>`.
    > Approach: <Keep, Adjust or Rewrite>, <one line on what changed>.
