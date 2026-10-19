@@ -26,6 +26,6 @@ Runs `create-raw-prd`, `critique-prd` and `summarise` as one flow. You draft the
 
 4. **Fix with the user.** Read the `## Fixing the PRD` section of `${CLAUDE_PLUGIN_ROOT}/skills/critique-prd/SKILL.md` and run that flow on the critic's report. Its first message is the critic's report, verbatim, followed by the scope question. The flow ends when its apply report is sent, or when the owner chooses no fixes. Then go straight on to step 5 in the same turn.
 
-5. **Summarise.** Call the Skill tool with `product-development:summarise` on the PRD's absolute path, and send its summary as the last message of this flow. The critique has already run, so the summary's last line is this, in place of the `critique-prd` line:
+5. **Summarise.** Call the Skill tool with `product-development:summarise` on the PRD's absolute path, and send its summary as the last message of this flow. Add this as the summary's last line:
 
    > Next: make a spec from the PRD with `/create-spec <absolute path to the PRD>`.
