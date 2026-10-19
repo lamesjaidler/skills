@@ -75,8 +75,36 @@ Every baseline failure pattern is closed:
 - **M2 regression, 1/1:** F1 dropped, F2 **untested** with the reason despite the user's ask, F3
   dropped; no version bump; no second go-ahead.
 
+## Final-review fix pass
+
+A fresh whole-branch reviewer returned "with fixes". Each Important finding got a RED
+scenario on the skill as it stood:
+
+| Finding | RED | Outcome |
+|---|---|---|
+| A replay of a step that commits could run in the user's product repo | M5 3/3 pass (agents used throwaway clones unprompted, and each said the skill should say so); unprimed M5b 3/3 void (safety classifier) | One conditional line added to step 3.2, labelled **untested**: no faithful unprimed test could run, and a wrong replay commits on the user's PR branch. |
+| Replays might load the installed skill, not the worktree copy | M5 3/3 pass (prompts rebuilt from the worktree copy) | Dropped: no failure. |
+| `superpowers:writing-skills`' own checklist (commit and push) not overridden | M5 reps 2–3 with writing-skills in view: pass, nothing pushed before step 4 | Dropped: no failure. |
+| `cd <worktree>` may not persist between calls | M6 3/3 pass (`cd … &&` on every call); main-thread cwd persists anyway | Dropped. |
+| Commit messages not under the general-terms rule | M6 3/3 pass | Dropped: no failure. |
+| AskUserQuestion's 4-option cap vs 5–6 findings | M6 3/3 pass (split across questions) | Dropped: no failure. |
+| `summarise` missing from the blame list (all three workflow skills call it since the merge) | not tested | Added: a factual list update, not behaviour-shaping wording. |
+| `jq` missing from the README requirements | — | Added. |
+
+**Real-session check (plan Review Focus 3).** The reviewer ran on a real past
+`/build-from-spec` session with 14 subagent transcripts: it ran `transcript.sh`, opened the 9
+subagent transcripts where the work happened, judged the run against the skill version it had
+loaded, treated a non-GitHub remote as an environment failure, and returned "No findings."
+
 ## Deferred (not fixed)
 
 - If a checkout doesn't ignore `.claude/worktrees/`, the new worktree shows as untracked there.
   This user's checkout excludes it (`.git/info/exclude`).
 - A checkout whose remote isn't called `origin`.
+- "Stop after step 2" in Before you start is ambiguous (two lists have a step 2).
+- No fallback when `find` prints no transcript.
+- When every picked finding is dropped, step 4 still asks to commit an empty diff; no cleanup command for the worktree.
+- The "some" answer at step 4 needs a follow-up question the skill doesn't spell out.
+- `transcript.sh` cuts tool inputs at 500 characters; a subagent's full dispatch prompt is its transcript's first `[user]` line, which the skill could point to.
+- R1 fixture predates `build-from-spec`'s new `summarise` step.
+- Several workflow runs in one session: combining replies and naming the branch is underspecified.

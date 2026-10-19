@@ -29,7 +29,7 @@ If the run shows none of these, the answer is `No findings.` A finding needs evi
 
 Blame the skill where the problem first entered:
 
-- **A step in this run went wrong:** the skill that ran that step. That's `/create-prd`, `/create-spec`, `/build-from-spec`, or a `product-development` skill they call: `create-raw-prd`, `critique-prd`, `stop-and-think`, `apply-laws-of-ux`, `critique-spec`, `critique-implementation-plan`, `update-pr`.
+- **A step in this run went wrong:** the skill that ran that step. That's `/create-prd`, `/create-spec`, `/build-from-spec`, or a `product-development` skill they call: `create-raw-prd`, `critique-prd`, `stop-and-think`, `apply-laws-of-ux`, `critique-spec`, `critique-implementation-plan`, `update-pr`, `summarise`.
 - **An input file left something undecided, vague or wrong** (a spec term with no rule behind it, a PRD gap): the skill that wrote and checked that file. That's `create-spec` and `critique-spec` for a spec; `create-prd`, `create-raw-prd` and `critique-prd` for a PRD. Blame it even though its session isn't in this transcript: the file is the evidence. A later skill that also missed the gap can be a second finding.
 - **The root cause is in a skill from another plugin** (`superpowers`, `mattpocock-skills`): the `product-development` skill that calls it. The fix goes in its dispatch prompt or the step that wraps it.
 
