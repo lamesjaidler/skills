@@ -2,7 +2,6 @@
 name: update-pr
 description: Use when the user runs /update-pr with a GitHub PR number or URL and wants that PR's title and description rewritten so a reader with no context understands them.
 argument-hint: "<PR number or URL>"
-disable-model-invocation: true
 ---
 
 # Update PR

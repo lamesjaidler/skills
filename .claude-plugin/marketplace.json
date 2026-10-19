@@ -17,7 +17,7 @@
     {
       "name": "product-development",
       "source": "./product-development",
-      "description": "Turn a product idea into a PRD ready for the spec: get grilled on the idea first, get a product-only draft (what and why), then critique it into proposed edits. Turn the PRD into a finalised spec: brainstorm it, check it's the best approach, pick the UI from prototypes, and critique it against the PRD. Prototype or critique UIs against the Laws of UX. Critique the spec and implementation plan before execution. Step back to check a design is the best way to reach the goal. Rewrite a PR's title and description for a reader with no context."
+      "description": "Turn a product idea into a PRD ready for the spec: get grilled on the idea first, get a product-only draft (what and why), then critique it into proposed edits. Turn the PRD into a finalised spec: brainstorm it, check it's the best approach, pick the UI from prototypes, and critique it against the PRD. Prototype or critique UIs against the Laws of UX. Critique the spec and implementation plan before execution. Step back to check a design is the best way to reach the goal. Rewrite a PR's title and description for a reader with no context. Build a spec end to end: plan, critique, implement, simplify, security-review, PR. Summarise a PRD, spec or plan into its decisions and open items, or the work done from a plan, in Simplified Technical English."
     }
   ]
 }

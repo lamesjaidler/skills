@@ -56,7 +56,7 @@ Added to the marketplace. **Experimental.**
 
 ## product-development
 
-### [0.6.0] — 2026-10-19
+### [0.8.0] — 2026-10-19
 
 - `create-spec` skill: one command from a PRD to a finalised spec. You
   brainstorm the spec with `superpowers:brainstorming`, which starts from the
@@ -69,8 +69,33 @@ Added to the marketplace. **Experimental.**
   never edited: decisions that contradict it are listed in the hand-off for
   you to update. You have to start it yourself (`/create-spec`); it never
   fires on its own.
-- Now depends on `superpowers` from `claude-plugins-official`, as well as
-  `mattpocock-skills`.
+
+### [0.7.0] — 2026-10-19
+
+- `summarise` skill: summarises a PRD, spec or implementation plan for the
+  person about to approve it. The reply lists what the doc decided and what it
+  leaves open for them, each item with a pointer to its section or ID. It is
+  written in ASD-STE100 Simplified Technical English (the writing rules in our
+  own words, no dictionary). It is not a review: it ends by pointing to the
+  matching `critique-*` skill. After an agent has carried out a plan, it
+  summarises the work instead, from the branch's commits and diff: what was
+  done, what changed from the plan, what was not done, and what still needs
+  the user. It runs only read-only git commands.
+
+### [0.6.0] — 2026-10-18
+
+- `build-from-spec` skill: one command from a spec to an open PR. Fresh
+  subagents write the plan with `superpowers:writing-plans` and critique it
+  against the spec with `critique-implementation-plan`, applying the fixes;
+  you answer only the decisions they need. It then implements the plan with
+  `superpowers:subagent-driven-development`, runs `/simplify` and
+  `/security-review` in fresh subagents that fix what they find, pushes the
+  branch, opens a PR into `main` and rewrites it with `update-pr`. Expects the
+  spec on its own branch or worktree. Manual-only: it never triggers on its
+  own.
+- `update-pr` is no longer manual-only, so `build-from-spec` can call it.
+  You can still run it yourself with `/product-development:update-pr`.
+- New dependency: `superpowers` from `claude-plugins-official`.
 
 ### [0.5.0] — 2026-10-18
 
