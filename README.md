@@ -13,13 +13,14 @@ A [Claude Code](https://code.claude.com) plugin marketplace of small agent skill
 | `product-development` | `stop-and-think` | A design grows through follow-up tweaks until nobody checks whether it is still the best way to reach the goal. | Before building, ask "is this the best way?" or "are we over-engineering this?" (or invoke `stop-and-think`). It states the goal in one sentence, sketches the simplest design from scratch, and returns a verdict — Keep, Adjust or Rewrite — with up to 5 changes. It changes nothing until you pick. |
 | `product-development` | `update-pr` | PR titles and descriptions get written for the author, so a reviewer or later reader can't tell what changed or why it matters. | Run `/product-development:update-pr <PR number or URL>`. It reads the PR and its diff, rewrites the title and body in short, plain sentences starting with a tl;dr, and saves them with `gh pr edit`. Every fact from the old body is kept. `build-from-spec` also calls it on the PR it opens. Needs the `gh` CLI, signed in. |
 | `product-development` | `build-from-spec` | Going from a spec to a reviewed PR takes six separate skill runs, and each hand-off is a chance to stall, skip a review, or review your own work. | Put the spec on its own branch or worktree, then run `/product-development:build-from-spec <spec path>`. Fresh subagents write the plan (`superpowers:writing-plans`) and critique it against the spec, applying fixes. You answer only the decisions it needs, one at a time. It implements the plan with `superpowers:subagent-driven-development`, then fresh subagents run `/simplify` and `/security-review` and fix what they find. It pushes the branch, opens a PR into `main`, and rewrites it with `update-pr`. Only you can start it; it never fires on its own. Needs `superpowers` (installs as a dependency) and the `gh` CLI, signed in. |
+| `product-development` | `summarise` | A long PRD, spec or plan written by an agent hides the choices it made for you, so you approve it without seeing them. After an agent carries out a plan, you can't easily tell what it actually did. | Run `/summarise <path>`, or ask to summarise a PRD, spec or plan. You get the doc's decisions and the items it leaves open for you, each with a pointer to its section or ID, in short ASD-STE100 sentences. After a plan has been carried out, it reads the branch's commits instead and lists what was done, what changed from the plan, what was not done, and what needs you. It changes no files and makes no critique; it ends by pointing to the matching critique or code-review skill. |
 | `qualitative-product-research` | `practicing-user-interviews` | You're about to interview real users, but untrained questions lean on opinions and hypotheticals that produce flattering, useless answers — and there's nowhere safe to practice. | Run it in your app's repo and say "be a user I can interview". It plays a persona grounded in the repo and coaches each question toward specific past behaviour, live. |
 | `qualitative-product-research` | `live-interview-copilot` | Mid-interview, under time pressure, it's hard to pick the best next question — easy to ask double-barrelled or leading ones and waste the session. | Start it before a live call, give it the research goal, then paste each reply. You get one short, speakable next question back per turn. |
 
-Each plugin bundles the skills for one area of product work: `product-development` drafts and critiques the PRD (the *what*), prototypes or critiques the UI, reviews the spec and plan (the *how*), steps back to check a design is the right approach, rewrites PR descriptions, and builds a spec end to end into a PR; `qualitative-product-research` runs the discovery interviews.
+Each plugin bundles the skills for one area of product work: `product-development` drafts and critiques the PRD (the *what*), prototypes or critiques the UI, reviews the spec and plan (the *how*), steps back to check a design is the right approach, summarises a PRD, spec or plan before you approve it, rewrites PR descriptions, and builds a spec end to end into a PR; `qualitative-product-research` runs the discovery interviews.
 
 > [!WARNING]
-> **Experimental.** `product-development` is `v0.5.0` and `qualitative-product-research` is `v0.1.0`; both are only lightly tested. Expect rough edges and breaking changes. Feedback and issues welcome.
+> **Experimental.** `product-development` is `v0.7.0` and `qualitative-product-research` is `v0.1.0`; both are only lightly tested. Expect rough edges and breaking changes. Feedback and issues welcome.
 
 ## Install
 
@@ -70,7 +71,7 @@ skills/                                  # repo root = the marketplace
 │   └── skills/
 │       ├── practicing-user-interviews/SKILL.md
 │       └── live-interview-copilot/SKILL.md
-├── product-development/                 # plugin (9 skills; depends on mattpocock-skills, superpowers)
+├── product-development/                 # plugin (10 skills; depends on mattpocock-skills, superpowers)
 │   ├── .claude-plugin/plugin.json
 │   └── skills/
 │       ├── create-prd/SKILL.md          # runs create-raw-prd, then critique-prd in a fresh subagent
@@ -79,6 +80,7 @@ skills/                                  # repo root = the marketplace
 │       ├── critique-spec/SKILL.md
 │       ├── critique-implementation-plan/SKILL.md
 │       ├── stop-and-think/SKILL.md
+│       ├── summarise/SKILL.md
 │       ├── update-pr/SKILL.md
 │       ├── build-from-spec/SKILL.md     # plan → critique → implement → simplify → security review → PR
 │       └── apply-laws-of-ux/

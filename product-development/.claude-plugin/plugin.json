@@ -1,8 +1,8 @@
 {
   "name": "product-development",
   "displayName": "Product Development",
-  "version": "0.6.0",
-  "description": "Turn a product idea into a PRD ready for the spec: get grilled on the idea first, get a product-only draft (what and why), then critique it into proposed edits. Prototype or critique UIs against the Laws of UX. Critique the spec and implementation plan before execution. Step back to check a design is the best way to reach the goal. Rewrite a PR's title and description for a reader with no context. Build a spec end to end: plan, critique, implement, simplify, security-review, PR.",
+  "version": "0.7.0",
+  "description": "Turn a product idea into a PRD ready for the spec: get grilled on the idea first, get a product-only draft (what and why), then critique it into proposed edits. Prototype or critique UIs against the Laws of UX. Critique the spec and implementation plan before execution. Step back to check a design is the best way to reach the goal. Rewrite a PR's title and description for a reader with no context. Build a spec end to end: plan, critique, implement, simplify, security-review, PR. Summarise a PRD, spec or plan into its decisions and open items, or the work done from a plan, in Simplified Technical English.",
   "author": {
     "name": "James Laidler",
     "email": "james@electrify.video"
@@ -29,7 +29,9 @@
     "pull-request",
     "pr-description",
     "build-pipeline",
-    "subagent-driven-development"
+    "subagent-driven-development",
+    "summary",
+    "simplified-technical-english"
   ],
   "dependencies": [
     { "name": "mattpocock-skills", "marketplace": "claude-plugins-official" },
