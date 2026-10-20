@@ -16,7 +16,7 @@ A **raw PRD** is the first, uncritiqued draft of *what* to build and *why*, writ
 
    If the Skill tool can't find `mattpocock-skills:grilling`, tell the user to install the `mattpocock-skills` plugin from `claude-plugins-official`, then stop.
 
-2. **Run the invent check before asking for shared understanding.** Draft each template section in your head and ask: *what would I have to invent to write this?* Every invention is a question still on the frontier; ask it in the next round. Repeat until each section can be written from the user's answers, or holds an item the user chose to defer.
+2. **Run the invent check before asking for shared understanding.** Draft each template section in your head and ask: *what would I have to invent to write this?* Fill every slot the template names, such as each non-goal's reason and each metric's baseline and target. A slot you would leave empty, or fill with a timing such as "later" or "v2", is an invention too. Every invention is a question still on the frontier; ask it in the next round. Repeat until each section can be written from the user's answers, or holds an item the user chose to defer.
 
 3. **Confirm.** Ask whether you've reached a shared understanding, and name the file you'll write: the repo's existing PRD folder if it has one, else `docs/prd/<slug>.md`.
 
