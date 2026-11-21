@@ -5,7 +5,7 @@ description: Use when the user wants to write, draft, or create a PRD (product r
 
 # Create a raw PRD
 
-A **raw PRD** is the first, uncritiqued draft of *what* to build and *why*, written only from the user's own answers. You build it by grilling the user, then filling the template below. It then goes to `critique-prd`.
+A **raw PRD** is the first, uncritiqued draft of *what* to build and *why*, written only from the user's own answers. It is one page: 500 words at most. You build it by grilling the user, then filling the template below. It then goes to `critique-prd`.
 
 ## Steps
 
@@ -20,9 +20,15 @@ A **raw PRD** is the first, uncritiqued draft of *what* to build and *why*, writ
 
 3. **Confirm.** Ask whether you've reached a shared understanding, and name the file you'll write: the repo's existing PRD folder if it has one, else `docs/prd/<slug>.md`.
 
-4. **Write the PRD** to that file using the template. Each line traces to something the user said. Decisions the user deferred go under open questions; beliefs nobody has checked go under assumptions.
+4. **Write the PRD** to that file using the template. Each item is one line: one decision, number or reason the user gave. Each line traces to something the user said. Decisions the user deferred go under open questions; beliefs nobody has checked go under assumptions.
 
-5. **Hand off** with exactly this message:
+   Then run `wc -w <file>`. While it prints more than 500, shorten the file and run it again.
+
+5. **Ask about what the page left off.** List each thing the user said that the page does not hold. When the list is empty, go to step 6. Otherwise show the user the list and ask one AskUserQuestion with two options:
+   - **Cut it**: the file stays as it is.
+   - **Appendix**: add the list to the end of the file, under the heading `## Appendix: left off the page`.
+
+6. **Hand off** with exactly this message:
 
    > PRD written to `<path>`.
    > Open questions: <count>, waiting on <who>.
