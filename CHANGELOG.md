@@ -56,6 +56,19 @@ Added to the marketplace. **Experimental.**
 
 ## product-development
 
+### [0.12.0] — 2026-11-20
+
+- `create-raw-prd`: the PRD is now one page, 500 words at most, with one
+  line per decision, number or reason. When your answers hold more than the
+  page does, it lists what the page left off and asks you to choose: cut it,
+  or keep it in an appendix at the end of the same file. In testing the same
+  grilling went from about 1,400 words to 500. The limit covers the raw
+  draft: `critique-prd` then adds what it finds, about 150 to 220 words on a
+  full page in testing when every decision was deferred.
+- `critique-prd`: reads the appendix as the owner's words, the way it reads a
+  grilling transcript. A question the appendix answers is no longer a
+  finding, and appendix lines are no longer moved back above the heading.
+
 ### [0.11.0] — 2026-10-19
 
 - `build-from-spec`: after it opens the PR, the run now ends with

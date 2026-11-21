@@ -19,6 +19,8 @@ Product questions are findings: who uses it, what each user can do, what they se
 
 A PRD from `create-raw-prd` opens with `Status: raw draft, not yet critiqued · <date>` and numbers its items: `R` (user stories), `A` (beliefs nobody has confirmed), `Q` (decisions the owner deferred, each waiting on someone). Cite these IDs next to `path:line`. A PRD in another format gets the same critique, cited by `path:line` alone.
 
+It may end with `## Appendix: left off the page`: a list of things the owner said that the PRD above that heading does not hold. The critique covers the text above the heading. The spec writer reads the appendix too, so read it as you would the grilling transcript: a claim it backs traces to the owner, and a question it answers is not a gap.
+
 ## Process
 
 1. **Read the whole PRD.** List every decision, every claim (numbers, user behaviour, causes, "X already happens"), and every `R`/`A`/`Q` ID.
